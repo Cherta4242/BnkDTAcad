@@ -1,0 +1,487 @@
+#include <stdio.h>
+
+int main(){
+	
+	// 보수
+	// ex) 10의 4의 보수 = 4에 몇을 더해야 10이 되는가?
+	// 즉 보수 = 보충해주는 수
+	
+	/*
+	이진법의 보수
+	약 4bit(4 칸)을 잡고 수가 양수면 0, 음수면 1을 제일 앞에 붙이다.
+	이 때 무조건 비트는 4비트(4칸)
+	 
+	ex) 0001(2) -> 1의 보수가 무엇이냐? 라고 하면
+	수를 바꿈(0 -> 1, 1 -> 0) 1110(2) -> -1 
+	
+	1의 보수
+	ex) 그럼 1010(2)을 10진법으로 변환하면 몇이냐?
+	수를 양수로 변환) 1010(2) -> 0101(2)
+	이후 계산 0101(2) = 5(10)
+	
+	2의 보수
+	방금 한 것들(양의 수를 음의수로 바꾼 것)
+	ex) 0000(2) -> 1111(2) = 0
+	이것에 1을 더함
+	ex) 1111(2) + 1(2) = 10000(2) = 0(10)
+	이후 5번쨰 비트를 지움 = 10000(2) -> 0000(2) = 0(10) 
+	하지만 1111(2) = -1부터 1001(2) = -7까지 표시되며 1000(2)가 남음
+	그래서 1000(2)는 -8로 표시.
+	즉 4개의 비트로 이진법이 표시할 수 있는 수는 -8~7까지 이다.	 
+	
+	아주 간단하게 2의 보수 를 10진법으로 바꾼다면? 
+	이진법은 각 비트마다 1, 2, 4, 8등등을 1이 적혀있는 부분끼리 더해서 10진법으로 바꾼다. 
+	1의 보수는 반대로 0이 있는 부분을 계산하면 된다. 
+	2의 보수는 1의 보수를 구한 후 +1을 하면 완료. 
+	*/
+
+	
+	//논리 회로
+
+	/*
+	AND gate
+	x = 0 0 1 1
+				=> 0 0 0 1
+	y = 0 1 0 1 
+	
+	OR gate
+	x = 0 0 1 1
+				=> 0 1 1 1
+	y = 0 1 0 1
+	  
+	NOT gate
+	x = 0	1
+		=> 
+	y = 1	0
+	
+	XOR gate
+	x = 0 0 1 1
+				=> 0 1 1 0
+	y = 0 1 0 1
+	*/ 
+	
+	
+	// 반복문(while)
+	
+	/*
+	int cnt = 0;
+	while(cnt < ?){
+		cnt = cnt + 1;
+	} 
+	
+	while(이 식이 참인 동안){
+		Code를 반복해서 실행함. 
+	}
+	*/
+	
+	// ex) "안녕하세요" 를 10번 반복하는 while 반복문 만들기. 
+	/*
+	printf("안녕하세요 10번 반복하기!\n\n");
+	int i = 1;
+	
+	while(i<11){
+		printf("%d번 사용: Hello~\n\n", i);
+		i++;
+	}
+
+
+	// 깔끔하게 선 긋기 (함수사용 X) 
+	int Line = 0;
+	
+	while(Line<30){
+		printf("-");
+		Line++;
+	}
+	printf("\n\n");
+	*/
+	
+	/*
+	// 키보드로 입력받기.
+	// scanf에는 printf와 다르게 "변수명"이 아닌 "변수의 주소"를 작성한다. 
+	// 이 때 주소를 구하기 위해 &를 사용함.
+	// 또한 scanf에는 \n을 사용하지 않는다. 
+	
+	int n;
+	printf("Input Number(1~9): ");
+	scanf("%d", &n); 
+	
+	// n에 입력한 값이 제대로 들어간건지 확인하는 용도의 printf
+	printf("입력받은 수는 %d 입니다.\n\n", n); 
+	*/
+	
+	// 잠시 다른 문제. 
+	// 1부터 10까지 반복문을 사용하여 더하기.
+	/*
+	int n = 0;
+	int a = 0;
+	
+	while(a < 10){
+		a++;
+		n = n+a;
+		printf("%d번째 시도: %d\n\n", a, n);
+		
+	}
+	*/
+	
+	// if문을 사용하여 키보드로 1을 누르면 1, 2를 누르면 2 등등 출력. 1부터 5까지만 허용하고 나머지는 X 
+	
+	/*
+	int n;
+	
+	printf("1~5까지의 숫자를 입력하십시오: ");
+	scanf("%d", &n);
+	*/
+	
+	// 이건 1~5까지의 입력된 수를 if문으로 작성하는 방법. 
+	/*
+	if(n > 5 || n < 1){
+		printf("숫자가 1~5사이가 아닙니다.");
+	}else if(5 >= n >= 1){
+		printf("입력하신 숫자는 %d입니다.", n);
+	}else{
+		printf("숫자가 아닌 것 같습니다.");
+	}
+	*/
+	
+	
+	// switch-case 문
+	// switch(괄호 안의 출력이 case 에 합당한 값을 찾는다.) 
+	// 이건 1~5까지의 입력된 수를 switch문으로 작성하는 방법.	
+	
+	/*
+	switch(n){
+		case 1:
+			printf("1입니다.\n"); 
+			break;
+		case 2:
+			printf("2입니다.\n");
+			break;
+		case 3:
+			printf("3입니다.\n"); 
+			break;
+		case 4:
+			printf("4입니다.\n");
+			break;
+		case 5:
+			printf("5입니다.\n"); 
+			break;
+		default:
+			printf("1~5 이외의 수 입니다.\n");
+	}
+	*/
+	
+	
+	// 1~5사이의 숫자가 들어오면 "유효한 숫자입니다."
+	// 그 외의 숫자가 들어오면 "유효하지 않은 숫자입니다."
+	// 출력하기 
+	
+	/*
+	switch(n){
+		case 1:
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+			printf("유효한 숫자입니다.\n"); 
+			break;
+		default:
+			printf("유효한 숫자가 아닙니다.\n");
+	}
+	*/
+	
+	// 점수를 저장하는 변수(score)를 하나 만들고 점수 입력받기. 
+	// 90점 이상이면 A, 80점 이상이면 B, 70 = C, 60 = D, 이외에는 F 
+	/*
+	int score;
+	
+	printf("점수를 입력하세요: ");
+	scanf("%d", &score);
+	*/
+	
+	// 1. if-else문
+	/*
+	if(100 >= score && score >= 90){
+		printf("A\n\n");
+	} else if(score >=80){
+		printf("B\n\n");
+	}else if(score >= 70){
+		printf("C\n\n");
+	}else if(score >= 60){
+		printf("D\n\n");
+	}else{
+		printf("F입니다!\n\n");
+	}
+	*/
+
+	// 2. switch문 
+	/*
+	switch(score/10){
+		case 10:
+		case 9:
+			printf("A");
+			break;
+		case 8:
+			printf("B");
+			break;
+		case 7:
+			printf("C");
+			break;
+		case 6:
+			printf("D");
+			break;
+		default:
+			printf("F");
+	}
+	*/
+	
+	
+	
+	// 국어, 영어, 수학 점수 입력받기.
+	// 평균 60점 이상이면 합격.
+	// 아니면 불합격
+	
+	// switch문
+	/*
+	int Kor;
+	int Eng;
+	int Math;
+	int avg; 
+	
+	
+	printf("국어점수를 입력해 주세요: ");
+	scanf("%d", &Kor);
+	printf("영어점수를 입력해 주세요: ");
+	scanf("%d", &Eng);	
+	printf("수학점수를 입력해 주세요: ");
+	scanf("%d", &Math);
+	printf("\n\n");
+	avg = 	(Kor + Eng + Math) / 3;
+	
+	printf("switch문 실행했을 시 \n"); 
+	switch(avg >= 60){
+		case 1:
+			printf("합격입니다.\n\n");
+			break;
+		default:
+			printf("불합격입니다.\n\n");
+	}
+	*/
+	
+	/*
+	// if 문
+	printf("if문으로 실행했을 시 \n");
+	if (avg >= 60){
+		printf("합격입니다.\n\n");
+	} else{
+		printf("불합격입니다.\n\n");
+	} 
+	*/
+	
+	
+	// 숫자맞추기. 
+	// 10번의 기회가 있거나 맞출 때까지 하기.
+	/*
+	int target = 4;
+	int ans;
+	int count = 0;
+	
+
+	while(count<10 && ans != target){
+		printf("1~9까지의 숫자 중 하나를 써주세요!\n\n당신이 고른 숫자: ");
+		scanf("%d", &ans);
+		
+		printf("\n\n"); 
+		if(ans == target){
+			printf("맞추셨습니다!\n\n");
+		}else{
+			printf("틀리셨습니다!\n\n");
+		}
+		count++;
+	}
+
+	printf("다음 문제로 뵐게요~\n");
+	*/
+	
+	// do-while문 
+	/*
+	do{
+		printf("1~9까지의 숫자 중 하나를 써주세요: ");
+		scanf("%d", &ans); 
+	}while(ans != target);
+	*/
+	
+	
+	// 반복 횟수를 키보드로 입력받아 처리하자.
+	/*
+	int counting;
+	int cnt = 0;
+	printf("몇 번 반복하시겠습니까? : ");
+	scanf("%d", &counting);
+	
+	while(cnt < counting){
+		printf("%d번 반복하는 중\n", cnt+1);
+		cnt++;
+	}
+	*/
+		
+	// 배열 -> 묶음
+	// 배열이란, 물리적으로 연속된 공간의 동일한 타입의 자료가 저장되어있는 구조
+	// Ex) int n = 10, 11, 15, 2, -4, 42.. 등 동일한 타입의 자료가 연속되어있음.
+	// 이 때 n 안에 있는 연속된 숫자들의 위치를 Index라고 한다. [0], [1], [2].. 등등.
+	// 배열을 선언하면 int A[3]; -> A (0, 1, 2)를 사용하며, 이 때 선언 후 배열 안에는 아무도 모르는 값(쓰래기값)이 들어있다.
+	// 배열 초기화는 int A[3] = {1, 2, 3}; 으로 적는다. 
+	
+	// arr배열에 1, 2, 3, 4, 5를 대입. B에는 arr배열에 있는 배열의 같은 인덱스마다 같은 값을 넣기. 
+	/*
+	int arr[5] = {1, 2, 3, 4, 5};
+	int B[5];
+	int cnt = 0;
+	while(cnt < 5){
+		B[cnt] = arr[cnt];
+		printf("B[%d]: %d\n", cnt, B[cnt]);
+		cnt++;
+	}
+	*/
+	
+	
+	
+	// a배열에 5개. b배열 5개. index는 거꾸로 저장하기.
+	// sizeof => 배열 크기 -> 4byte * 배열 index 개수 
+	// 즉, sizeof(배열) / sizeof(배열 아무 인덱스) = 배열 전체 크기 / 배열 인덱스 크기(4byte) = 배열의 크기
+	// 이게 배열의 길이 크기. 
+	
+	/*
+	int a[5] = {1, 2, 3, 4, 5};
+	int b[5];
+	int cnt = 0;
+	int c = (sizeof(a)/sizeof(a[0])) - 1;
+	
+	while(cnt < 5){
+		b[cnt] = a[c];
+		printf("b[%d]: %d\n", cnt, b[cnt]);
+		cnt++;
+		c--;
+	}
+	*/ 
+	
+	
+	
+	// A배열을 선언하고, 반복문을 통해 1~10까지 각 인덱스마다 차례대로 기입.
+	// A배열 중 짝수의 개수, 3의 배수의 개수 출력. 
+	
+	/*
+	int A[10];
+	int C = 0;
+	int D = 0;
+	int cnt = 0;
+	int B = sizeof(A)/sizeof(A[0]);
+	 
+	while(cnt < 10){
+		A[cnt] = cnt + 1;
+		if(A[cnt] % 2 == 0){
+			C++;
+		}
+		if(A[cnt] % 3 == 0){
+			D++; 			
+		}
+		cnt++;
+	}
+	
+	cnt = 0;
+	printf("A배열의 전체 인덱스 안에 있는 값은 (");	
+	while(cnt < 10){
+		printf("%d ", A[cnt]);
+		cnt++;
+	}
+	printf(")이고.\n");
+	printf("A배열의 길이는 %d, 짝수 개수는 %d개, 3의 배수 개수는 %d개, \n", B, C, D);
+	*/
+	
+	
+	// A에 10개의 배열이 있다. 
+	// odd에는 홀수, even은 짝수를 대입. 
+	int A[10] = {23, 32, 14, 16, 7, 9, 12, 44, 41, 5};
+	int odd[10]= {0,};
+	int even[10] = {0,};
+	int cnt = 0;
+	int i = 0;
+	int ii = 0;
+	
+	while(cnt < 10){
+		if(A[cnt] % 2 == 0){
+			even[i] = A[cnt];
+			i++;
+			cnt++;
+		}else if(A[cnt] % 2 != 0){
+			odd[ii] = A[cnt];
+			ii++;
+			cnt++;
+		}else{
+		}
+	}
+	
+	cnt = 0;
+	printf(" even의 배열: ");
+	while(cnt < 10){
+		printf("%d ", even[cnt]);
+		cnt++;
+	}
+	printf("\n\n");
+	printf(" odd의 배열: ");
+	cnt = 0;
+	while(cnt < 10){
+		printf("%d ", odd[cnt]);
+		cnt++;
+	}	
+	printf("\n\n"); 
+	cnt = 0;
+	int evencount = 0;
+	int oddcount = 0;
+	// 짝수 개수 구하기 
+	while(cnt < 10){
+		if(even[cnt] != 0){
+			evencount++;
+		}
+		if(odd[cnt] != 0){
+			oddcount++;
+		}
+		cnt++;
+	}
+	int EVEN[evencount];
+	int ODD[oddcount];
+	cnt = 0;
+	// 홀수 개수 구하기 
+	while(cnt < evencount){
+		EVEN[cnt] = even[cnt];
+		cnt++;
+	}
+	cnt = 0;
+	while(cnt < oddcount){
+		ODD[cnt] = odd[cnt];
+		cnt++;
+	}
+	cnt = 0;
+	printf("EVEN의 배열 값: ( "); 
+	// EVEN에 even값 넣기. 
+	while(cnt < evencount){
+		printf("%d ", EVEN[cnt]);
+		cnt++;
+	}
+	printf(") 입니다."); 
+	printf("\n");
+	
+	
+	cnt = 0;
+	// ODD에 odd값 넣기. 
+	printf("ODD의 배열 값: ( ");
+	while(cnt < oddcount){
+		printf("%d ", ODD[cnt]);
+		cnt++;
+	}
+	printf(") 입니다.");
+	
+	
+	return 0; 
+}
+
+ 
