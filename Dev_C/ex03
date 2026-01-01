@@ -1,0 +1,297 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h> 
+
+// 251231
+
+int add3(int n){	
+	// 함수.
+	// 1. 함수의 자료형 -> return되는 자료의 타입을 명시한다. 
+	// 2. 함수의 이름.
+	// 3. 함수의 입력자료(입력부).
+	// 4. 함수를 호출.
+	// 5. return (결과 반환).
+	
+	int result = n + 3;
+	
+	return result;
+}
+
+int plus(int n, int m){
+	// 덧셈 함수 
+	return n + m;
+}
+
+int minus(int n, int m){
+	// 뺄셈 함수 
+	return n - m;
+}
+
+int multiple(int n, int m){
+	// 곱셈함수 
+	return n * m;
+}
+
+int division(int n, int m){
+	// 나눗셈 함수 
+	return n / m;
+}
+
+void printLine(int n){
+	// Q. 선긋기 함수 만들기 
+	int ii= 0;
+	while(ii < n){
+		int i = 0;
+		while(i < 11){
+			printf("-");
+			i++;
+		}
+		printf(" ");
+		ii++;
+	}
+	printf("\n\n");
+	return;
+}
+
+// Q. printLine이라는 함수처럼 무언가를 긋지만 꼭 -기호만 아닌 main에서 어떤 기호를 제공해주면 제공받은 문자를 10번 찍는 함수 만들기.
+ 
+void printLine2(char n, int m){
+	// Q. 선긋기 함수 만들기 
+	int i = 0;
+	while(i < m){
+		printf("%c", n);
+		i++;
+	}
+	printf("\n\n");
+	return;
+}
+
+// Q. printLine함수가 뭔가가 좀 아쉽다. 10개는 좀 짧은데 길게 찍고 싶을때고 있지 않은가? 그것도 지정해 볼 수 있게 만들어보자.	
+// 이전 문제가 이거 아니었어요? 아 속았네 
+void printLine3(char n, int m){
+	// Q. 선긋기 함수 만들기 
+	int i = 0;
+	while(i < m){
+		printf("%c", n);
+		i++;
+	}
+	printf("\n\n");
+	return;
+}
+
+	/*
+	=======================
+		계산기 V1.0 
+	=======================
+	연산자를 선택하세요.
+	1. +		2. -
+	
+	
+	를 구현하세요.	
+	*/
+
+void intro(){
+	// 메인화면 구현하기 
+	printf("========================\n");
+	printf("      계산기 V1.0       \n");
+	printf("========================\n");
+		
+	return; 
+}
+
+int menu(){
+	// 메뉴화면 구현하기 
+	printf("   연산자를 선택하세요\n");
+	printf(" 1. +        2. -     \n");
+	printf(" 3. ×       4. ÷    \n");
+	
+	int choose = 0;
+	scanf("%d", &choose);
+	
+	return choose;
+}
+
+void calc(int n){
+	// 계산기 구현하기
+	int choose = n;
+	 
+	int A = 0;
+	int B = 0;
+	int C = 0;
+	
+	
+	if(choose == 1){
+		printf("덧셈을 선택했군요!\n");
+		printLine3('-', 17); 
+		printf("두 숫자를 입력해주세요!\n");
+		printf("숫자 1:");
+		scanf("%d", &A);
+		printf("숫자 2: ");
+		scanf("%d", &B);
+		C = plus(A, B);
+		printf("결과는: %d입니다!", C);
+	}else if(choose == 2){
+		printf("뺄셈을 선택했군요!\n");
+		printLine3('-', 17);
+		printf("두 숫자를 입력해주세요!\n");
+		printf("숫자 1:");
+		scanf("%d", &A);
+		printf("숫자 2: ");
+		scanf("%d", &B);
+		C = minus(A, B);
+		printf("결과는: %d입니다!", C);
+	}else if(choose == 3){
+		printf("곱셈을 선택했군요!\n");
+		printLine3('-', 17);
+		printf("두 숫자를 입력해주세요!\n");
+		printf("숫자 1:");
+		scanf("%d", &A);
+		printf("숫자 2: ");
+		scanf("%d", &B);
+		C = multiple(A, B);
+		printf("결과는: %d입니다!", C);
+	}else if(choose == 4){
+		printf("나눗셈을 선택했군요!\n");
+		printLine3('-', 17);
+		printf("두 숫자를 입력해주세요!\n");
+		printf("숫자 1:");
+		scanf("%d", &A);
+		printf("숫자 2: ");
+		scanf("%d", &B);
+		C = division(A, B);
+		printf("결과는: %d입니다!", C);
+	}else{
+		printf("알겠습니다. 종료할게요.\n"); 
+	}
+	
+	return;
+}
+
+
+int main(){
+	
+	// OS -> 하드웨어와 가장 밀접한 시스템 소프트웨어.
+	// Process -> 처리중인 프로그램 하나.
+	// BCB(Process Control Block) -> 프로세스의  묶음.
+	// Context switch(문맥 교환) -> CPU에서 처리중인 Process를 강제로 끌어내리고
+	// 남은 처리시간이 가장 적게 남은 P(처리대기)를 처리하는것. 
+	// 각 사람들끼리 해놓은 약속 -> Protocol이라 부름.
+
+	// 스케줄링(scheduling) 기법 종류 
+	// FCFS(First Come First Start) -> 비선점
+	// FIFO(First In First Out) -> 비선점 
+	// SJF(Sortest Job First) -> 비선점
+	// HRN(Highest Response Ratio Next) -> 비선점 
+	// RR(Round Robin) -> 선점
+
+	// OSI 7Layer(물데네 전세표응)
+	// 물리, 데이터 링크, 네트워크, 전송(Transoprt), 세션, 표현(presentation), 응용의 7개 계층이 있다.
+	
+	// random 변수 만들기.
+	// 최대값, 최소값을 정하고 랜덤함수 구하기.
+	// int r = rand() % (B - A + 1) + A; 
+	 
+	
+	// Q1. C언어에서 랜덤 수 만들기.
+	// 배열 A안에 임의의 숫자가 10개 들어간다. 1~100 중 10가지를 넣고, 배열 A의 최대값과 최소값을 찾기
+	 
+	srand(time(NULL));
+	int A[10];	// 배열의 길이 
+	int cnt = 0;
+	int maxcnt = sizeof(A)/sizeof(A[0]);
+	
+	
+	// 배열 A에 랜덤수 대입. 
+	
+	printf("배열 생성 ( ");
+	while(cnt < maxcnt){
+		A[cnt] = rand() % 100 + 1;	// 배열 A의 [0]부터 끝까지 난수 넣기. 
+		printf("%d ", A[cnt]);
+		cnt++;
+	}
+	printf(")"); 
+	
+	printf("\n\n");
+	
+	
+	int a = A[0];	// 최대값을 넣어줄 변수 - 배열A[cnt]를 넣음.
+	int b = A[0];	// 그냥 코드실행했을 때 알아보기 쉽게 사용하려고 넣음. 
+	printf("시작 -> %d\n", a);
+	cnt = 1;
+	
+	// 최대값 구하기.
+	while(cnt < maxcnt){
+		if(a < A[cnt]){
+			a = A[cnt];
+		}
+		if(a > A[cnt]){
+			printf("현재 값: %d\n", a);
+		}else{
+			printf("현재 값: %d -> %d\n", b, A[cnt]);
+			b = a;
+		}
+		cnt++;
+	}
+	printf("배열 A의 최대값은 %d입니다.\n", a);
+
+	printf("\n----------------------------------------------------------\n\n");
+
+	// 최소값 구하기.
+	cnt = 1;
+	printf("시작 -> %d\n", a);
+	while(cnt < maxcnt){
+		if(a > A[cnt]){
+			a = A[cnt];
+		}
+		if(a < A[cnt]){
+			printf("현재 값: %d\n", a);
+		}else{
+			printf("현재 값: %d -> %d\n", b, A[cnt]);
+			b = a;
+		}
+		cnt++;
+	}
+	
+	printf("배열 A의 최소값은 %d입니다.\n", a);
+	
+	
+	
+	
+	printf("\n----------------------------------------------------------\n\n");
+	// 함수 ( add3에 적음)
+	
+	int x = 2;	// 값을 지정하고. 
+	int y = add3(x);	// 그 값을 넣어 줌.
+	printf("함수를 호출해서 사용한 int y = add3(x)\n결과는 %d입니다.\n\n", y);
+	printf("x = %d, y = %d\n\n", x, y);
+	
+	int result = plus(x, y);
+	printf("함수를 호출 덧셈 x + y = %d\n", result);
+	
+	result = minus(x, y);
+	printf("함수를 호출 뺄셈 x - y = %d\n", result);
+	
+	result = multiple(x, y);
+	printf("함수를 호출 곱셈 x ×y = %d\n", result);
+	
+	result = division(x, y);
+	printf("함수를 호출 나눗셈 x ÷ y = %d\n", result);
+	printf("\n\n");
+	
+	printLine(3);
+	printLine2('*', 40);
+
+	// 함수를 이용하여 계산기 테마를 만들어보기
+	intro(); 
+	int sel = menu();
+	calc(sel);
+	
+	
+	return 0;	
+}
+
+
+
+
+
+ 
