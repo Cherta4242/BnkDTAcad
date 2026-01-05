@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h> 
+#include <time.h>
 
 // 251231
 
@@ -281,7 +281,7 @@ int main(){
 	printLine(3);
 	printLine2('*', 40);
 
-	// 함수를 이용하여 계산기 테마를 만들어보기
+	
 	intro(); 
 	int sel = menu();
 	calc(sel);
