@@ -14,15 +14,9 @@ public class Unit {
 	
 	// ------------------------------------------------------	
 	// 유닛의 스텟 설정하기.
-	/*
+	
 	Unit(String unitName, int Damage, int energy){
-		if(unitName != "blue") {
-			System.out.println("생성되는 유닛의 이름이 RED로 설정되었습니다.");
-			this.unitName = "RED";
-		}else {
-			System.out.println("생성되는 유닛의 이름이 BLUE로 설정되었습니다.");
-			this.unitName = "BLUE";
-		}
+		this.unitName = unitName;
 		if(Damage >= 5) {
 			System.out.println("저희 유닛의 최대 공격력인 4로 설정되었습니다.");
 			this.damage = 4;
@@ -39,16 +33,16 @@ public class Unit {
 		}
 		System.out.println("유닛 설정이 완료되었습니다.");
 	}
-	*/
 	
 
-	/*
-	void unitInfo() {
-		return "유닛 이름: " + unitName + "\n유닛 체력: " + energy + "데미지" + damage;
-	}
-	*/
 	// ------------------------------------------------------
+	// 유닛 정보 출력
+	String unitInfo() {
+		return "유닛 이름: " + unitName + "\n유닛 체력: " + energy + "\n데미지: " + damage;
+	}
 	
+	
+	// ------------------------------------------------------
 	// Unit Name 설정
 	void setUnitname(String unitName) {
 		this.unitName = unitName;
@@ -57,12 +51,19 @@ public class Unit {
 		return unitName;
 	}
 	
+	// ------------------------------------------------------
 	// Unit Damage 설정
 	void setUnitDmg(int damage) {
 		this.damage = damage;
 	}
 	int getUnitDmg() {
 		return damage;
+	}
+	
+	int attack(Unit un) {
+		un.energy = un.energy - damage;
+		
+		return energy;
 	}
 	// 집가서 해보자.
 }

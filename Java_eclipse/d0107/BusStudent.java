@@ -11,6 +11,7 @@ public class BusStudent {
 	// 버스는 자기 정보콘솔 출력기능을 제공한다. 
 	// 학생 클래스와 버스 클래스 실행클래스를 작성하시오.
 	
+	
 	private String number;	// 버스 번호
 	private int buscount;	// 버스 승객 수
 	private	int allMoney = 0;	// 요금 합계
@@ -59,8 +60,8 @@ public class BusStudent {
 	
 	//-------------------------------------
 	// 버스의 탑승객 수 출력
-	String busInfo() {
-		return "버스 탑승객 수는: " + buscount + "명 입니다.";
+	public String busInfo() {
+		return "버스 번호: " + number + "버스 탑승객 수는: " + buscount + "명 입니다.";
 	}
 	
 	
