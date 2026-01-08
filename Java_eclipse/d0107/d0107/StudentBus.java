@@ -55,16 +55,21 @@ public class StudentBus {
 	String stuInfo() {
 		return "\n이름: " + name + "\n학년: " + grade + "학년\n소지금: " + money + "\n";
 	}
+
 	
+	// 버스 탔을 때
 	//-------------------------------------
 	int getOnBus(BusStudent bs) {
 		bs.getOnBus();
 		money = money - 1000;
 		return money;
 	}
-	
-	//-------------------------------------
 
+	// 버스 내렸을 때
+	//-------------------------------------
+	void getOffBus(BusStudent bs) {
+		bs.getOffBus();
+	}
 	
 	
 }
