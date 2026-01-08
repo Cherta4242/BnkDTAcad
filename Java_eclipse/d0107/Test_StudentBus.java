@@ -37,12 +37,13 @@ public class Test_StudentBus {
 		stdb1.getOnBus(bus1);
 		
 		// 현재 버스 정보 보기
-		System.out.println("----------------------\n현재 버스 정보");
-		System.out.println(bus1.busInfo());
-		System.out.println(bus0.busInfo());
+		System.out.println("----------------------\n현재 버스 정보\n");
+		System.out.print(bus1.busInfo());
+		System.out.print("\n----------------------\n");
+		System.out.print(bus0.busInfo());
 		
 		// 현재 학생 정보 보기
-		System.out.println("----------------------\n현재 학생 정보");
+		System.out.println("\n----------------------\n현재 학생 정보");
 		System.out.print(stdb1.stuInfo());
 		System.out.print(stdb2.stuInfo());
 		System.out.print(stdb3.stuInfo() + "\n");
