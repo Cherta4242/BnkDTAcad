@@ -61,15 +61,7 @@ public class BusStudent {
 	//-------------------------------------
 	// 버스의 탑승객 수 출력
 	public String busInfo() {
-		return "버스 번호: " + number + "버스 탑승객 수는: " + buscount + "명 입니다.";
-	}
-	
-	
-	
-	
-	
-	
-	
+		return "버스 번호: " + number + "\n버스 탑승객 수는: " + buscount + "명\n누적 요금" + allMoney + "입니다.";
 	
 	
 }
