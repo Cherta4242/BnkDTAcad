@@ -3,6 +3,9 @@ package d0108;
 public class Ex_String {
 	public static void main(String[] args) {
 
+		// 문자열을 다루게 될 때 많이 쓰이는 메소드들
+		
+		
 		String str1 = "Hello, world";
 		String str2 = "Java Programming";
 		String str3 = "    Hello Java      ";
@@ -35,5 +38,23 @@ public class Ex_String {
 		System.out.println("8. replace('l', 'L'" + str3.replace('l', 'L'));
 		System.out.println("8. replace(\"World\",\"Java\"):" + str3.replace("world", "java"));
 		System.out.println(str3);
+		
+		// 9. 문자열 분할: split()
+		String[] words = str1.split(", ");
+		System.out.println("9. split(\", \")");
+		for(String word: words) {
+			System.out.println("  - " + word);
+		}
+		
+		// 10. 문자열 비교: equals()
+		String s1 = "abc";
+		String s2 = "abcd";
+		System.out.println(s1.equals(s2));
+		
+		
+		
+		
+		
+		
 	}
 }
