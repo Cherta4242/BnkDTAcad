@@ -4,7 +4,7 @@ public class Save implements ManageMent{
 
 	// 저장
 	private int count = 0;
-	Register[] std = new Register[3];
+	Register[] std = new Register[4];
 	int i=1;
 	
 	

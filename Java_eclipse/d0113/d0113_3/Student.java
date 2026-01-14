@@ -8,11 +8,12 @@ public class Student{
 		Save std = new Save();
 		Check check = new Check();
 		Correction change = new Correction();
-		
+		Delete del = new Delete();
 		
 		std.AddStd(new Register(1, 2, "장진우"));
 		std.AddStd(new Register(2, 3, "김건엽"));
 		std.AddStd(new Register(3, 1, "허 윤"));
+		std.AddStd(new Register(4, 1, "에이얍"));
 		
 		check.showAll(std);
 		
@@ -20,8 +21,9 @@ public class Student{
 		
 		check.showAll(std);
 				
-		
-		
+		del.Cut(std, 1);
+
+		check.showAll(std);
 		
 		
 		
