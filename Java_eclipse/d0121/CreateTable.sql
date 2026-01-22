@@ -1,6 +1,0 @@
-CREATE TABLE TestMember(
-id VARCHAR2(20) PRIMARY KEY,
-pw VARCHAR2(20),
-name VARCHAR2(20)
-);
-
