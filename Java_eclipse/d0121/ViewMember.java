@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class ViewMember {
+	ArrayList<Member> al = new ArrayList<>();
+	
 	String url = "jdbc:oracle:thin:@//localhost:1521/orcl";
 	String user = "green";
 	String pw = "1234";
@@ -31,6 +34,32 @@ public class ViewMember {
 			count++;
 		}
 	}
+	
+	// ArrayList를 사용해서 정보 반환시키기 위해 사용.
+	public ArrayList<Member> ArrayMmb() throws Exception{
+		String id = null;
+		String pw = null;
+		String name = null;
+		
+		Connection conn = DriverManager.getConnection(url, user, this.pw);
+		Statement stmt = conn.createStatement();
+		
+		ResultSet rs = stmt.executeQuery("SELECT * FROM TestMember");
+		while(rs.next()) {
+			id = rs.getString("id");
+			pw = rs.getString("pw");
+			name = rs.getString("name");
+			Member m = new Member(id, pw, name);
+			m.setId(id);
+			m.setPw(pw);
+			m.setName(name);
+			al.add(m);
+		}
+		
+		return al;
+	}
+	
+	// 전체 멤버의 이름만 반환하기
 	public void showAllMember() throws Exception{
 		Connection conn = DriverManager.getConnection(url, user, pw);
 		Statement stmt = conn.createStatement();
@@ -47,6 +76,7 @@ public class ViewMember {
 		
 	}
 	
+	// 특정 멤버의 이름 반환하기
 	public String getName(String id, String pwd) throws Exception{
 		String name = null;
 		

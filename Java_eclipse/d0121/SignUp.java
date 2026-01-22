@@ -6,11 +6,6 @@ import java.sql.PreparedStatement;
 import java.util.Scanner;
 
 public class SignUp{
-	/*
-	private String id;
-	private String pwd;
-	private String name;
-	*/
 	
 	Scanner sc = new Scanner(System.in);
 	
@@ -18,18 +13,6 @@ public class SignUp{
 		String url = "jdbc:oracle:thin:@//localhost:1521/orcl";
 		String user = "green";
 		String pw = "1234";
-		
-		
-		/*
-		System.out.print("id를 입력해주세요\n>> ");
-		id = sc.next();
-		System.out.print("\npw를 입력해주세요\n>> ");
-		pw = sc.next();
-		System.out.print("\nname을 입력해주세요\n>> ");
-		name = sc.next();
-		*/
-		
-
 		
 		Connection conn = DriverManager.getConnection(url, user, pw);
 		PreparedStatement pstmt = conn.prepareStatement("INSERT INTO TestMember(id, pw, name) VALUES (?,?,?)");
@@ -41,7 +24,7 @@ public class SignUp{
 		System.out.println("회원가입이 완료되었습니다.");
 		int result = pstmt.executeUpdate();
 		System.out.println(result + "건 등록 완료!");
-
-		
 	}
+	
+
 }
