@@ -4,12 +4,10 @@ import java.util.Scanner;
 
 // 모든 기능들 모음.
 public class Service {
-	Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in, "EUC-KR");
 	
 	// 생성자
 	Service(){
-		System.out.println("JJW Library입니다!");
-		// System.out.println("어떤것을 실행하실 건가요?");
 	}
 	
 	// 책 검색
@@ -31,6 +29,12 @@ public class Service {
 		System.out.println("전체 책 제목 및 위치를 출력합니다.");
 		bs.showAll();
 	}
+	
+	// 현재 대출중인 책
+	public void loanMember() {
+		
+	}
+	
 	
 	// 도서관 회원 회원가입
 	public void librarySignUp() throws Exception{
@@ -105,31 +109,6 @@ public class Service {
 		bmsu.SignUp(id, pwd, name, manager);
 	}
 		
-	// 로그인
-	public void libraryLogin() throws Exception{
-		BookLogin blg = new BookLogin();
-		BookSearch bs = new BookSearch();
-
-		String id;
-		String pw;
-		int loginchk;
-		System.out.println("로그인하겠습니다.");
-		while(true) {
-			System.out.print("아이디를 입력해주세요!\n>> ");
-			id = sc.next();
-			System.out.print("\n비밀번호를 입력해주세요!\n>> ");
-			pw = sc.next();
-			loginchk = blg.login(id, pw);
-			
-			if(loginchk == 1) {
-				System.out.println("로그인 되었습니다.");
-				System.out.println("***환영합니다 "+ bs.searchName(id, pw) + "님!***");
-				break;
-			}else {
-				System.out.println("아이디, 비밀번호가 틀렸습니다. 다시 입력해주세요!");
-			}
-		}
-	}
 		
 
 		// 책 추가
@@ -190,6 +169,65 @@ public class Service {
 	}
 	
 	
+	public void loanBook() throws Exception{
+		BookSearch bs = new BookSearch();
+		BookUpdate bu = new BookUpdate();
+		String bookname;
+		String id;
+		int i = 0;
+		
+		while(true) {
+			System.out.print("대출하실 책 이름을 입력해주세요. (exit를 누르면 뒤로갑니다)\n>> ");
+			bookname = sc.next();
+			if("exit".equals(bookname)) {
+				System.out.println();
+				System.out.println("프로그램을 종료합니다.");
+				break;
+			}
+			System.out.println();
+			i = bs.specBook(bookname);
+			if(i == 0) {
+				System.out.println("없는 책입니다. 다시 입력해주세요.");
+			}else {
+				// 책이 대출중인지 아닌지
+				i = bs.bookisloan(bookname);
+				if(i == 1) {
+					System.out.println("아쉽지만 책이 이미 대출 중입니다.");
+				}
+				else {
+					System.out.print("확정을 위해 id를 입력해주세요.\n>> ");
+					id = sc.next();
+					bu.loan(bookname, id);
+					break;					
+				}
+			}
+		}
+	}
+
+	public void returnBook(String bkna, String id) throws Exception{
+		BookUpdate bu = new BookUpdate();
+		String bookname = bkna;
+		
+		bu.bookReturn(bookname, id);		
+	}
+	
+	public String BookLoanMem(String id, String pw) throws Exception{
+		BookSearch bs = new BookSearch();
+		String name = null;
+		
+		name = bs.loanMember(id, pw);
+		
+		return name;
+	}
+	
+	public int manager(String id, String pw) throws Exception{
+		BookSearch bs = new BookSearch();
+		int i = 0;
+		
+		i = bs.ManagerYes(id, pw);
+		
+		return i;
+	}
 	
 	
 }

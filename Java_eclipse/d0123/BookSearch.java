@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class BookSearch {
-	String url = "jdbc:oracle:thin:@//localhost:1521/testdb";
+	String url = "jdbc:oracle:thin:@//192.168.0.184:1521/orcl";
 	String user = "green";
 	String pw = "1234";
 	
@@ -47,6 +47,53 @@ public class BookSearch {
 		}
 	}
 	
+	// 책이 있는지 없는지
+	public int specBook(String name) throws Exception{
+		Connection conn = DriverManager.getConnection(url, user, pw);
+		PreparedStatement pstmt = conn.prepareStatement("SELECT COUNT(*) AS cnt FROM library WHERE bname = ?");
+
+		int i = 0;
+		pstmt.setString(1, name);
+		ResultSet rs = pstmt.executeQuery();
+		rs.next();
+		i = rs.getInt("cnt");
+		
+		
+		return i;
+	}
+	
+	// 대출중인지 조회
+	public int bookisloan(String name) throws Exception{
+		Connection conn = DriverManager.getConnection(url, user, pw);
+		PreparedStatement pstmt = conn.prepareStatement("SELECT COUNT(*) AS cnt FROM library WHERE bname = ? AND bsituation = ?");
+
+		int i = 0;
+		pstmt.setString(1, name);
+		pstmt.setString(2, "대출 중");
+		ResultSet rs = pstmt.executeQuery();
+		rs.next();
+		i = rs.getInt("cnt");
+		
+		
+		return i;
+	}
+	
+	// 대출중인지 조회
+	public int bookisloan2(String name) throws Exception{
+		Connection conn = DriverManager.getConnection(url, user, pw);
+		PreparedStatement pstmt = conn.prepareStatement("SELECT COUNT(*) AS cnt FROM library WHERE bname = ? AND bsituation = ?");
+
+		int i = 0;
+		pstmt.setString(1, name);
+		pstmt.setString(2, "미 대출");
+		ResultSet rs = pstmt.executeQuery();
+		rs.next();
+		i = rs.getInt("cnt");
+		
+		
+		return i;
+	}
+	
 	
 	// 책 코드가 있는지 확인
 	public int searchCode(String code) throws Exception{
@@ -76,14 +123,14 @@ public class BookSearch {
 	}
 	
 	// 특정 사람 이름 출력
-	public String searchName(String id, String pw) throws Exception{
+	public String searchName(String id, String pwd) throws Exception{
 		String name = null;
 		
 		Connection conn = DriverManager.getConnection(url, user, pw);
 		PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM libmember WHERE lid = ? AND lpw = ?");
 
 		pstmt.setString(1, id);
-		pstmt.setString(2, pw);
+		pstmt.setString(2, pwd);
 		ResultSet rs = pstmt.executeQuery();
 		rs.next();
 		name = rs.getString("lname");
@@ -91,5 +138,39 @@ public class BookSearch {
 		
 		return name;
 	}
+	
+	// 현재 대출중인 책
+	public String loanMember(String id, String pwd) throws Exception{
+		String name = null;
+		
+		Connection conn = DriverManager.getConnection(url, user, pw);
+		PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM libmember WHERE lid = ? AND lpw = ?");
+
+		pstmt.setString(1, id);
+		pstmt.setString(2, pwd);
+		ResultSet rs = pstmt.executeQuery();
+		rs.next();
+		name = rs.getString("lbname");
+		
+		return name;
+	}
+	
+	// 매니저인가?
+	public int ManagerYes(String id, String pwd) throws Exception{
+		int manage = 0;
+		
+		Connection conn = DriverManager.getConnection(url, user, pw);
+		PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM libmember WHERE lid = ? AND lpw = ?");
+
+		pstmt.setString(1, id);
+		pstmt.setString(2, pwd);
+		ResultSet rs = pstmt.executeQuery();
+		rs.next();
+		manage = rs.getInt("lmanager");
+		
+		
+		return manage;
+	}
+	
 	
 }

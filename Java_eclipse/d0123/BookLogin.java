@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 public class BookLogin {
 
-	String url = "jdbc:oracle:thin:@//localhost:1521/testdb";
+	String url = "jdbc:oracle:thin:@//192.168.0.184:1521/orcl";
 	String user = "green";
 	String pw = "1234";
 	

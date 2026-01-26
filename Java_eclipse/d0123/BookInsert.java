@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 // DB Access
 public class BookInsert {
 
-	String url = "jdbc:oracle:thin:@//localhost:1521/testdb";
+	String url = "jdbc:oracle:thin:@//192.168.0.184:1521/orcl";
 	String user = "green";
 	String pw = "1234";
 	
@@ -21,6 +21,7 @@ public class BookInsert {
 	// 책 위치?
 	private String location;
 	
+	private String situation = "미 대출";
 	BookInsert(){}
 
 	
@@ -29,12 +30,14 @@ public class BookInsert {
 		this.name = name;
 		this.date = date;
 		this.location = location;
+		
 		Connection conn = DriverManager.getConnection(url, user, pw);
-		PreparedStatement pstmt = conn.prepareStatement("INSERT INTO library(bcode, bname, bdate, blocation) VALUES (?, ?, ?, ?)");
+		PreparedStatement pstmt = conn.prepareStatement("INSERT INTO library(bcode, bname, bdate, bsituation, blocation) VALUES (?, ?, ?, ?, ?)");
 		pstmt.setString(1, code);
 		pstmt.setString(2, name);
 		pstmt.setString(3, date);
-		pstmt.setString(4, location);
+		pstmt.setString(4, situation);
+		pstmt.setString(5, location);
 		pstmt.executeUpdate();
 		
 		System.out.println("실행되었습니다.");
