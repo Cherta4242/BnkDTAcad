@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="css/style1.css"/>
+    <style>
+        h1{
+            color: #4B5C8A;
+        }
+        div{
+            color: #4B5C8A;
+        }
+        p{
+            color: #8C7FA3;
+        }
+        h2{
+            color: #1C2238;
+        }
+    </style>
+</head>
+<body>
+    <h1>H1 테스트 용 입니다.</h1>
+    <!-- Form action="link" method ="get(기본) / post"-->
+     <Form action="../ex01/p2.html" method="post">
+        <!-- 입력 양식(요소) -->
+        <input type="text" name="nickname" placeholder="별명을 입력하세요"/><br>
+        <input type="checkbox" name="hobby" value="독서"/>독서&nbsp;&nbsp;<br>
+        <input type="checkbox" name="hobby" value="달리기" id="run"/>달리기&nbsp;&nbsp;
+        <label for="run">달리기</label><br>
+        <input type="checkbox" name="hobby" value="코딩"/>코딩&nbsp;&nbsp;<br>
+        <input type="radio" name = "gender" value="남자"/>남&nbsp;<br>
+        <input type="radio" name="gender" value="여자"/>여&nbsp;<br>
+        <select name="country">
+            <option value="korea">한국</option>
+            <option value="china">중국</option>
+            <option value="japan">일본</option>
+        </select><br>
+        <select name="colors" multiple>
+            <option value="red">빨강</option>
+            <option value="blue">파</option>
+            <option value="green">초</option>
+            <option value="black">검</option>
+        </select><br>
+        <h1>test2</h1>
+        <div>div1</div>
+        <p><b>p1</b>p1</p>
+        <!-- 제출 버튼 -->
+         <h2>제출 버튼입니다.</h2>
+        <input type="submit" value="제출" />
+
+     </Form>
+</body>
+</html>
