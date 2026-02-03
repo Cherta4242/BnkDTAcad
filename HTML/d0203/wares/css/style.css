@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+/*ALL
+---------------------------------------*/
+html{
+    font-size: 100%;
+    background-color: #141B2D;
+}
+
+body{
+    font-family: "나눔고딕", NanumGothic, "맑은고딕", MalgunGothic, "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.7;
+    color: rgb(34, 58, 134);
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 70%;
+    max-height: 50%;
+}
+
+/*HEADER
+-----------------------------------------------*/
+.logo{
+    width: 150px;
+    height: 70px;
+    margin-top: 14px;
+}
+.main-nav{
+    display: flex;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+}
+.main-nav li{
+    margin-left: 36px;
+}
+.main-nav a{
+    color: rgb(72, 119, 190);
+}
+.main-nav a:hover{
+    color: #0bd;
+}
+.page-header{
+    display: flex;
+    justify-content: space-between;
+}
+.wrapper{
+    max-width: 1100px;
+    max-height: 100px;
+    margin: 0 auto;
+    padding: 0 4%;
+
+}
+/* MAIN*/
+.signUplogin{
+    display: flex;
+    justify-content: flex-end;
+}
+.signUplogin h5{
+    margin-left: 36px;
+}
+.suggest{
+    color: white;
+    text-align: center;
+}
+.wareone{
+    width: 1100px;
+    height: 180px;
+    align-items: center;
+    background-color: rgb(27, 42, 85);
+    color: rgb(72, 119, 190);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+}
+.mouse{
+    padding-left: 180px;
+    padding-right: 50px;
+    width: 150px;
+}
+.home-content a{
+    color: white;
+    padding-left: 10px;
+}
+
+
+/* DetailPage_MAIN
+-----------------------------------------------------------------------------*/
+.hrdetail{
+    border: none;
+    border-top: 3px solid #202b47;
+    margin-bottom: 200px;
+}
+.mousedetail{
+
+    height: 150px;
+}
+th{
+    margin-left: 5px;
+}
+.viperdetail{
+    display: flex;
+}
+.tabledetail{
+    margin-left: 100px;
+}

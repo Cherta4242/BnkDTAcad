@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .id1{
+            color: blue;
+        }
+        #id1{
+            color: red;
+        }
+        h1{
+            color: olive;
+        }
+        .wrap{
+            color: green;
+        }
+        #id2{
+            color: blue;
+        }
+        .wrap > p{
+            color: orange;
+        }
+        /*#id3 > p{
+            color: purple;
+        }*/
+        /*  +: 인접 형제 선택자
+            ~: 일반 형제 선택자
+        */
+        h3 ~ p{
+            color: aqua;
+        }
+        input[type='text']{
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="id1" class="id1">id선택자 div 요소</h1>
+    <div class="wrap">
+        <p id="id2">id 선택자 p 요소</p>
+        <p>p 요소 2</p>
+        <div id="id3">
+            <h3>h3 요소</h3>
+            <p>p 요소 3</p>
+            <p>p 요소 4</p>
+            <div>
+                <p>요소 test</p>
+            </div>
+        </div>
+        <p>p 요소 5</p>
+        <input type="text" placeholder="하위">
+        <input type="button">
+    </div>
+</body>
+</html>
