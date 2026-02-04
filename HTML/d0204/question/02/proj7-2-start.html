@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+* {
+	margin: 0;										/* 마진 초기화 */
+	padding: 0;										/* 패딩 초기화 */
+}
+#dress {
+	width: 600px;									/* 너비 */
+	height: 855px;									/* 높이 */
+	margin: 30px;									/* 마진 */
+	background-image: url("./img/blue_bg.png");		/* 배경 이미지 */
+	color: #fed45a;									/* 글자 색상 */
+	font-size: 18px;								/* 글자 크기 */
+	font-family: "돋움";								/* 글자 폰트 */
+	text-align: center;							/* 글자 중앙 정렬 */
+	box-shadow: 5px 5px 10px #888888;				/* 박스 그림자 */
+}
+img {
+	width: 400px;									/* 너비 */
+}
+h1 {
+	font-family: "맑은고딕";							/* 글자 폰트 */
+	font-size: 60px;								/* 글자 크기 */
+	color: #fed45a;									/* 글자 색상 */
+	text-shadow: 3px 3px 10px black;				/* 글자 그림자 */
+	padding-top: 20px;								/* 상단 패딩 */
+}
+#eng {
+	display: inline-block;							/* 블록 방식 설정 */
+	font-size: 30px;								/* 글자 크기 */
+	color: #fed45a;									/* 글자 색상 */
+	margin: 10px 0;									/* 마진 */
+	text-align: center;								/* 글자 중앙 정렬 */
+}
+p {
+	margin: 30px 60px;								/* 마진 */
+	line-height: 150%;								/* 줄 간격 */
+	text-align: center;								/* 글자 중앙 정렬 */
+	color: white;								/* 글자 색상 */
+}
+ul {
+	margin-top: 20px;								/* 상단 마진 */
+}
+li {
+	text-align: left;							/* 글자 좌측 정렬 */
+	list-style: square;					/* 글 머리 기호 : 사각형 */
+	margin-left: 120px;								/* 좌측 마진 */
+	padding: 10px 0 0 15px;							/* 패딩 */
+	line-height: 150%;								/* 줄 간격 */
+}
+#button {
+	background-color: #fed45a;						/* 배경 색상 */
+	padding: 20px;									/* 패딩 */
+	margin: 40px 100px;								/* 마진 */
+	color: #13214d;									/* 글자 색상 */
+	font-size: 30px;								/* 글자 크기 */
+	font-weight: bold;							/* 볼드체 */
+}
+</style>
+</head>
+<body>
+	<div id="dress">
+		<h1>스페셜 드레스 샵</h1>
+		<span id="eng">Special Dress Shop</span>
+		<p>생일, 결혼기념일, 만난 기념일 등 특별한 날에 스페셜 드레스를 입고 포토존에서 멋진 추억의 사진을 남겨보세요.</p>
+		<img src="./img/dress.png">
+
+		<ul>
+		<li>기간 : 매주 토/일요일<br>
+	         <span>13:00 ~ 마감시간 전까지</span></li>
+		<li>장소 : 기념품 판매점 옆 스페셜 드레스<br>
+		※ 키즈, 커플 드레스도 입고 되었어요!</li>
+		</ul>
+
+		<div id="button">
+			<a>이용요금 및 이용방법</a>
+		</div>
+	</div>
+</body>
+</html>

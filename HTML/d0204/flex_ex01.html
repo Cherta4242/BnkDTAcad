@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex_ex01</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+            background-color: bisque;
+            width: 400px;
+            height: 200px;
+            flex-wrap: wrap;
+            overflow: hidden;
+            justify-content: space-between;
+        }
+        .item{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            background-color: seagreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>FLEX 연습</h1>
+    <hr>
+    <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <!--
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+            -->
+    </div>
+</body>
+</html>
