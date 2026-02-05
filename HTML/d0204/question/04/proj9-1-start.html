@@ -26,6 +26,18 @@
             font-size: 13px;
             margin-bottom: 30px;
         }
+        .thebk{
+            text-decoration: none;
+            color: inherit;
+        }
+        .logout{
+            text-decoration: none;
+            color: inherit;
+        }
+        .informationmodify{
+            text-decoration: none;
+            color: inherit;
+        }
         .hcjg{
             align-items: flex-end;
             width: 300px;
@@ -34,21 +46,39 @@
             list-style: none;
         }
         .button1{
-            background-color: red;
-            border: 0px solid black;
-            color: white;
-            width: 100px;
-            height: 30px;
             position: absolute;
-            top: 350px;
-            left: 1400px;
+            right: 29%;
+            bottom: 8%;
+            background: red;
+            color: white;
+            border: none;
+            padding: 0.5% 1.5%;
+            max-width: 150px;
+            max-height: 50px;
+            font-weight: bold;
+            font-size: clamp(8px 1.2vw 20px);
         }
         .mainpage{
-            margin-top: 50px;
+            margin: 50px auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around   ;
             max-width: 1100px;
-            padding: 0 30%;
+            width: 90%;
+        }
+        .main_bg{
+            width: 100%;
+            display: block;
+        }
+        .hero{
+            position: relative;
+        }
+        .headerselect{
+            text-decoration: none;
+            color: inherit;
+        }
+        .letsgo{
+            text-decoration: none;
+            color: inherit;
         }
         /* SIDEBAR
         -----------------------------------------------*/
@@ -199,6 +229,9 @@
             font-size: 13px;
             color: rgb(95, 184, 154);
         }
+        .thebakingh3{
+            text-align: left;
+        }
         .call{
             text-align: left;
         }
@@ -221,20 +254,23 @@
 </head>
 <body>
     <div class="page">
-        <button class="button1">신청하러가기</button>
+
         <header class="headerbach">
-            <h3><span class="thespan">THE</span> 베이킹</h3>
+            <h3><a href="proj9-1-start.html" class="thebk"><span class="thespan">THE</span> 베이킹</a></h3>
             <div>
-                <p class="hcjgp">김지영(jikim)님 &nbsp | &nbsp로그아웃&nbsp | &nbsp정보수정</p>
+                <p class="hcjgp">김지영(jikim)님 &nbsp | &nbsp<a href="#" class="logout">로그아웃&nbsp</a> | &nbsp<a href="#" class="informationmodify">정보수정</a></p>
                 <ul class="hcjg">
-                    <li><b>HOME</b></li>
-                    <li><b>출석부</b></li>
-                    <li><b>작품갤러리</b></li>
-                    <li><b>게시판</b></li>
+                    <li><a href="#" class="headerselect"><b>HOME</b></a></li>
+                    <li><a href="#" class="headerselect"><b>출석부</b></a></li>
+                    <li><a href="#" class="headerselect"><b>작품갤러리</b></a></li>
+                    <li><a href="#" class="headerselect"><b>게시판</b></a></li>
                 </ul>
             </div>
         </header>
-        <img src="img/main_bg.png" class="main_bg">
+        <div class="hero">
+            <img src="img/main_bg.png" class="main_bg">
+            <button class="button1"><a href="#" class="letsgo">신청하러가기</a></button>
+        </div>
         <div class="mainpage">
             <aside>
                 <div class="thebaking">
@@ -364,7 +400,7 @@
                         </div>
                     </div>
                     <div class="thebakinglast">
-                        <h3>The 베이킹</h3>
+                        <h3 class="thebakingh3">The 베이킹</h3>
                         <div class="aproch">
                             <p style="font-size: 11px;">주소: 경기도 용인시 기흥구 동백대로 123</p>
                             <p style="font-size: 11px;">전화: 031-123-1234</p>
