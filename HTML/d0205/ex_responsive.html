@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹</title>
+    <style>
+            /* 데스크탑 용 CSS
+            ----------------------------------------*/
+        *{
+            box-sizing: border-box;
+            border: 1px solid white;
+        }
+        body{
+            background-color: #141b2D;
+            color: white;
+        }
+        header, footer{
+            height: 100px;
+        }
+        .container{
+            display: flex;
+
+        }
+        .card{
+            flex: 1;        /* 요소 크기 변화 가능 */
+            min-width: 250px;
+            min-height: 100px;
+            background-color: rgb(93, 42, 117);
+        }
+        @media(max-width: 1023px){
+            /* 태블릿 용 CSS
+            ----------------------------------------*/
+            .container{
+                flex-wrap: wrap;
+            }
+            .card{
+                background-color: rgb(69, 55, 133);
+            }
+        }
+        @media(max-width: 599px){
+            /* 모바일 용 CSS
+            ----------------------------------------*/
+            .container{
+                flex-direction: column;
+            }
+            .card{
+                background-color: rgb(102, 67, 184);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        HEADER
+    </header>
+    <main class="container">
+        <section class="card">Content 1</section>
+        <section class="card">Content 2</section>
+        <section class="card">Content 3</section>
+    </main>
+    <footer>
+        FOOTER
+    </footer>
+</body>
+</html>

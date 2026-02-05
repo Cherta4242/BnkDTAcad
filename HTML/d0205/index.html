@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJW Tech</title>
+    <style>
+        /* ALL
+        -----------------------------------------------------------*/
+        *{
+            margin: 0;
+        }
+        body{
+            background-color: #141B2D;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* HEADER Place
+        -------------------------------------------------------------------*/
+        .mylogo{
+            max-width: 40px;
+        }
+        .Alldiv{
+            max-width: 1000px;
+            margin: 0 auto;
+            color: white;
+            padding: 10px 20px;
+        }
+        .headerflex{
+            margin-top: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 20px;
+        }
+        .menu{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid white;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .menu li a{
+            text-decoration: none;
+            color: inherit; 
+            font-size: 18px;
+        }
+        .menu li:hover{
+            color: aqua;
+        }
+        .menu li:not(:last-child)::after{
+            content: "/";
+            margin-left: 12px;
+            font-size: 22px;
+            top: 2px;
+            color: white;
+        }
+
+        /* MAIN place
+        ----------------------------------------------------------------------*/
+        .mainsection{
+            display: flex;
+            justify-content: space-between;
+        }
+        /* MAIN - Section 1
+        --------------------------------------------*/
+        main{
+            margin-top: 67px;
+        }
+        .main_section1_img{
+            position: relative;
+            width: 550px;
+            height: 400px;
+        }
+        .main_section1_img img{
+            width: 500px;
+            object-fit: cover;
+        }
+        .main_section1_img::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 70%;
+            background: linear-gradient(to bottom, rgba(20,27,45,0) 0%, #141B2D 60%, #141B2D);
+            z-index: 1;
+        }
+        .main_section1_text{
+            position: absolute;
+            bottom: -25px;
+            left: 130px;
+            color: white;
+            z-index: 2;
+        }
+        .main_section1_text h1{
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+        .main_section1_text p{
+            font-size: 20px;
+        }
+        .main_section1_text span{
+            font-size: 15px;
+            color: gray;
+        }
+        /* MAIN Section 2
+        -----------------------------------------------*/
+        .submenu{
+            width: 350px;
+        }
+        .submenu_title{
+            border-bottom: 1px solid white;
+            padding-bottom: 10px;
+        }
+        .submenu_title p{
+            color: rgb(30, 228, 218);
+            font-size: 16px;
+        }
+        .submenu_text{
+            font-size: 25px;
+            border-bottom: 0.3px solid rgb(85, 85, 85);
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+        .myname{
+            width: 300px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            margin-top: 10px;
+
+        }
+        .naming{
+            color: rgb(30, 228, 218);
+        }
+        .write_date{
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="Alldiv">
+        <!-- HEADER -->
+        <header class="headercls">
+            <div class="headerflex">
+                <a href="index.html"><img src="img/logo.png" class="mylogo"/></a>
+
+                <ul class="menu">
+                    <li><a href="#">Mouse</a></li>
+                    <li><a href="#">Keyboard</a></li>
+                    <li><a href="#">Mousepad</a></li>
+                    <li><a href="#">Monitor</a></li>
+                    <li><a href="#">Computer</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <div class="mainsection">
+                <section class="main_section1">
+                    <div class="main_section1_img">
+                        <img src="img/superstrike.jpg" class="superstrikex2"/>
+    
+                        <div class="main_section1_text">
+                            <h1>Logitech G Pro X2 SuperStrike</h1>
+                            <p>Logitech will launch the new Mouse<br><span>Launch Date - 2026 / 02 / 10</span></p>
+                            <div class="myname">
+                                <p class="naming">Cherta4242</p>
+                                <p class="write_date">02/05 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    
+                <section class="main_section2">
+                    <div class="submenu">
+                        <div class="submenu_title">
+                            <p>Best news of the week</p>
+                        </div>
+                        <div class="submenu_selectmenu">
+                            <div class="submenu_text selectmenu_one">
+                                <p>I found 'The Verge' website</p>
+                                <div class="myname">
+                                    <p class="naming">Cherta4242</p>
+                                    <p class="write_date">02/05 PM</p>
+                                </div>
+                            </div>
+                            <div class="submenu_text selectmenu_two">
+                                <p>I think this Website looks very good</p>
+                                <div class="myname">
+                                    <p class="naming">Cherta4242</p>
+                                    <p class="write_date">02/05 PM</p>
+                                </div>
+                            </div>
+                            <div class="submenu_text selectmenu_three">
+                                <p>So I rearning and make website like 'The Verge'</p>
+                                <div class="myname">
+                                    <p class="naming">Cherta4242</p>
+                                    <p class="write_date">02/05 PM</p>
+                                </div>
+                            </div>
+                            <div class="submenu_text selectmenu_four">
+                                <p>Thank you so much to person from made this website</p>
+                                <div class="myname">
+                                    <p class="naming">Cherta4242</p>
+                                    <p class="write_date">02/05 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+
+    </div>
+</body>
+</html>
