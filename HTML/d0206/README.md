@@ -1,20 +1,20 @@
 # 26년 2월 6일 수업 프로젝트입니다. 
 <br>
 <hr>
-## C조에게 와이어프레임, 스토리보드를 받아 3인이서 코드 작성.
+C조에게 와이어프레임, 스토리보드를 받아 3인이서 코드 작성.
 <hr>
-#### 허 윤 - Header Section 및 Chatbot.html 작성 담당 
-#### 장진우 (나) - Main Section 담당
-#### 김건엽 - Footer Section 담당
+허 윤 - Header Section 및 Chatbot.html 작성 담당 
+장진우 (나) - Main Section 담당
+김건엽 - Footer Section 담당
 
 <hr>
-# C조 와이어프레임 및 스토리 보드
-## 와이어프레임
+C조 와이어프레임 및 스토리 보드
+와이어프레임
 [C조.pdf](https://github.com/user-attachments/files/25123590/C.pdf)
 <hr>
 <img width="912" height="701" alt="image" src="https://github.com/user-attachments/assets/3226e368-b1db-4704-b06d-24480f2d8023" />
 <hr>
-## C조 스토리보드
+C조 스토리보드
 <hr>
 
 글자, 사진 등의 크기, 색깔은 알잘딱깔센 (적어놓긴할게욥^^)
@@ -79,7 +79,7 @@ https://busandong100.kr/tm/img/mo_logo02.png
 부산은행 메인 페이지 푸터 참고 바랍니다.
 
 <hr>
-## Chat Bot
+Chat Bot
 <hr>
 <img width="997" height="569" alt="image" src="https://github.com/user-attachments/assets/7cdd6312-3340-4284-8dff-03d266a87d9c" />
 <hr>
