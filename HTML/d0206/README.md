@@ -3,18 +3,22 @@
 <hr>
 C조에게 와이어프레임, 스토리보드를 받아 3인이서 코드 작성.
 <hr>
-허 윤 - Header Section 및 Chatbot.html 작성 담당 
-장진우 (나) - Main Section 담당
-김건엽 - Footer Section 담당
-
+<br>
+허 윤 - Header Section 및 Chatbot.html 작성 담당 <br>
+장진우 (나) - Main Section 담당 <br>
+김건엽 - Footer Section 담당<br>
+<br>
 <hr>
 C조 와이어프레임 및 스토리 보드
 와이어프레임
 [C조.pdf](https://github.com/user-attachments/files/25123590/C.pdf)
+<br>
 <hr>
 <img width="912" height="701" alt="image" src="https://github.com/user-attachments/assets/3226e368-b1db-4704-b06d-24480f2d8023" />
+<br>
 <hr>
 C조 스토리보드
+<br>
 <hr>
 
 글자, 사진 등의 크기, 색깔은 알잘딱깔센 (적어놓긴할게욥^^)
@@ -77,11 +81,13 @@ https://busandong100.kr/tm/img/mo_logo02.png
 동백전 바로가기는 클릭시 동백전 공시사이트로 이동 되게 해주시면 됩니다.
 [푸터 1~3] 
 부산은행 메인 페이지 푸터 참고 바랍니다.
-
+<br>
 <hr>
 Chat Bot
+<br>
 <hr>
 <img width="997" height="569" alt="image" src="https://github.com/user-attachments/assets/7cdd6312-3340-4284-8dff-03d266a87d9c" />
+<br>
 <hr>
 챗봇 페이지
 챗봇 배경 색 : #EFEFEF
@@ -103,7 +109,7 @@ Chat Bot
 [이전 대화 불러오기, 나가기]
 글씨: tomato
 테두리: #222222, 그림자
-
+<br>
 <hr>
 <img width="1002" height="664" alt="image" src="https://github.com/user-attachments/assets/2f12e29a-659e-4828-b6fb-9bbb07d078f4" />
 
@@ -127,3 +133,4 @@ Chat Bot
 정책 지원금
 글씨:흰색, 필요에 따라 회색
 배경: 파란색(투명도 있게)
+<br>
