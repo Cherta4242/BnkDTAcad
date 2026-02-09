@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동백전 잔액조회</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="page-header wrapper">
+        <a href="index.html"><img class="logo" src="https://www.busanbank.co.kr/resource/img/tit/h1_busanbank_new.png" alt="은행 로고"></a>
+        <div class="header-r">
+            <div>
+                <ul class="user-menu">
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">은행소개</a></li>
+                    <li>
+                        <span>Global ▼</span> <ul class="global">
+                            <li><a href="#">한국어</a></li>
+                            <li><a href="#">영어</a></li>
+                            <li><a href="#">일본어</a></li>
+                            <li><a href="#">중국어</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="#">개인뱅킹</a></li>
+                    <li><a href="#">기업뱅킹</a></li>
+                    <li><a href="#">금융상품</a></li>
+                    <li>
+                        <input type="checkbox" id="menu-trigger" style="display: none;">
+                        <label for="menu-trigger" class="all-menu-btn">
+                            <img src="https://www.busanbank.co.kr/resource/img/ico/cmn/ico_gnb_allmenu.png" alt="전체메뉴">
+                            <span>메뉴</span>
+                        </label>
+                        <div id="allMenu" class="header-menu">
+                        <div class="header-menu-title">
+                            <h3>전체 서비스</h3>
+                            <label for="menu-trigger" class="btn-close">X</label>
+                        </div>
+
+                        <div class="header-menu-body">
+                            <div class="header-menu-col">
+                                <h4>전체계좌조회</h4>
+                                <ul>
+                                    <li><a href="#">거래내역조회</a></li>
+                                    <li><a href="#">매출집계</a></li>
+                                    <li><a href="#">기본정보조회</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="header-menu-col">
+                                <h4>거래내역조회</h4>
+                                <ul>
+                                    <li><a href="#">수표/어음</a></li>
+                                    <li><a href="#">보관어음조회/관리</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="header-menu-col">
+                                <h4>이체내역조회</h4>
+                                <ul>
+                                    <li><a href="#">세금우대/비과세한도조회</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="header-menu-col">
+                                <h4>특정일전체계좌잔액조회</h4>
+                                <ul>
+                                    <li><a href="#">해지계좌조회</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+                    </li>
+                    <li><a href="#"><img src="https://www.busanbank.co.kr/resource/img/ico/cmn/ico_gnb_search.png" alt="검색하기"><span>검색</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="wrapper dongback-main">
+        <section class="dongback-user-status">
+            <div class="dongback-name-tag">OOO님</div>
+        </section>
+
+        <div class="dongback-layout-row">
+            <aside class="dongback-sidebar">
+                <nav class="dongback-side-nav">
+                    <ul>
+                        <li><a href="#">이용내역</a></li>
+                        <li><a href="#">금액충전</a></li>
+                        <li><a href="#">자동충전</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <section class="dongback-content-blocks">
+                <div class="dongback-card card-item-1">
+                    <span class="card-label">충전 잔액</span>
+                    <strong class="card-value">50,000원</strong>
+                </div>
+                <div class="dongback-card card-item-2">
+                    <span class="card-label">캐시백</span>
+                    <strong class="card-value">1,250원</strong>
+                </div>
+                <div class="dongback-card card-item-3">
+                    <span class="card-label">정책 지원금</span>
+                    <strong class="card-value">10,000원</strong>
+                </div>
+            </section>
+        </div>
+
+        <section class="dongback-pass-container">
+            <h3 class="pass-title">동백패스</h3>
+            <div class="dongback-gauge-track">
+                <div class="dongback-gauge-fill" style="width: 75%;"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        
+        <div>
+            <ul class="footer1 wrapper">
+                <li><a href="#"><span>개인정보처리방침</span></a> <b>·</b></li>
+                <li><a href="#">&nbsp;경영공시&nbsp;</a><b>·</b>&nbsp;</li>
+                <li><a href="#">고객정보취급방침&nbsp;</a><b>·</b>&nbsp;</li>
+                <li><a href="#">보호금융상품등록부&nbsp;</a><b>·</b>&nbsp;</li>
+                <li><a href="#">상품공시실&nbsp;</a><b>·</b>&nbsp;</li>
+                <li><a href="#">전자민원접수&nbsp;</a><b>·</b>&nbsp;</li>
+                <li><a href="#">전자금융이용자보호수칙&nbsp;</a><b>·</b>&nbsp;</li>
+                <li><a href="#">전자금융사기피해금환급제도&nbsp;</a></li>
+                <li><a href="#">위치기반서비스 이용약관</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="footer-number wrapper">
+                <li>고객상담 1588-6299, 1544-6200</li>
+                <li>해외 82-2-1588-6200</li>
+            </ul>
+        </div>
+        <div class="footer-copy wrapper">
+            <p>COPYTRIGHT ⓒ 2014 BUSANBANK. ALL RIGHTS RESERVED.</p>
+        </div>
+        <div class="footer3 wrapper">
+
+  <!-- 첫 번째 버튼 -->
+        <nav class="nav">
+            <div class="dropdown">
+            <input type="checkbox" id="bnkToggle1" class="toggle">
+
+            <label for="bnkToggle1" class="drop-btn">
+                BNK금융네트워크
+                <span class="arrow">▼</span>
+            </label>
+
+            <ul class="drop-list">
+                <li><a href="#">BNK금융지주</a></li>
+                <li><a href="#">경남은행</a></li>
+                <li><a href="#">BNK캐피탈</a></li>
+                <li><a href="#">BNK투자증권</a></li>
+                <li><a href="#">BNK저축은행</a></li>
+                <li><a href="#">BNK자산운용</a></li>
+                <li><a href="#">BNK신용정보</a></li>
+                <li><a href="#">BNK시스템</a></li>
+                <li><a href="#">BNK금융네트워크</a></li>
+            </ul>
+            </div>
+        </nav>
+
+        <!-- 두 번째 버튼 -->
+        <nav class="nav">
+            <div class="dropdown">
+            <input type="checkbox" id="bnkToggle2" class="toggle">
+
+            <label for="bnkToggle2" class="drop-btn">
+                FAMILY STYLE
+                <span class="arrow">▼</span>
+            </label>
+
+            <ul class="drop-list">
+                <li><a href="#">부은동우회</a></li>
+                <li><a href="#">BNK부산은행 조은극장</a></li>
+                <li><a href="#">BNK부산은행갤러리</a></li>
+                <li><a href="#">부산은행금융역사관</a></li>
+                <li><a href="#">행복한 BNK</a></li>
+                <li><a href="#">FAMILY STYLE</a></li>
+            </ul>
+            </div>
+        </nav>
+
+        </div>
+
+    </footer>
+</body>
+</html>
