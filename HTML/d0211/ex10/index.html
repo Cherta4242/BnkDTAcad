@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table tbody > tr td{
+            font-weight: bold;
+            color: red;
+        }
+        .all{
+            margin: 0 auto;
+            max-width: 1000px;
+            display: flex;
+            gap: 80px;
+        }
+        .test{
+            border: 1px solid black;
+            padding: 30px;
+        }
+        .rocipa{
+            padding: 30px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="all">
+        <div class="test">
+            <!-- 글자 변경 -->
+            <h2>글자변경</h2>
+            <div id="demo">demo</div>
+            <div style="margin-bottom: 30px;"></div>
+            <button id="button" onclick="changeText()">text is click!</button>
+            <button id="button" onclick="changeText2()">text is demo</button>
+            <div style="margin-bottom: 30px; "></div>
+            <hr>
+            <!-- 이미지 변경-->
+            <h2>이미지 변경</h2>
+            <img src="img/cat.jpg" style="width: 250px; height: auto;"/><br>
+            <button id="button" onclick="changeImage()">Random Image!</button>
+            <button id="button" onclick="changeImage2()" >back to cat!</button>
+            <div style="margin-bottom: 30px; "></div>
+            <hr>
+    
+            <!-- 값을 입력받고 alert로 출력하기 -->
+            <h2>값 입력받으면 alert로 출력</h2>
+            <div>
+                <input type="text" id="txt" placeholder="입력하세요!">
+                <button onclick="getValue()">알림 띄우기!</button>
+            </div>
+            <div style="margin-bottom: 30px; "></div>
+    
+            <!-- 위에있는 값 복사해서 바꾸기 -->
+            <h2>alert로 출력하려는 값 복사하기</h2>
+            <div>
+                <input type="text" id="txt2" placeholder="yeah!">
+                <button onclick="sameValue()">위에있는 텍스트박스 값 복사하기</button>
+            </div>
+            <div style="margin-bottom: 30px; "></div>
+        </div>
+
+        <!-- 가위바위보 -->
+        <div class="rocipa">
+            <h2>가위바위보</h2>
+            <div>
+                <img src="img/ready.JPG" width="100px" /><br>
+                <input type="text" id="rcp" placeholder="가위 바위 보를 입력해주세요!">
+                <button onclick="rcpgo()">가위바위보!</button>
+            </div>
+            <div style="margin-bottom: 30px; "></div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- 스크립트 시작 -->
+    <script>
+        const demo = document.getElementById("demo");
+
+        // 글자 변경
+        function changeText(){
+            demo.textContent = "click!";
+        }
+        function changeText2(){
+            demo.textContent = "demo";
+        }
+
+
+        // 이미지 변경
+        let chimg = document.getElementsByTagName("img")[0];
+        let one = "img/rising.jpg";
+        let two = "img/bad.jpg";
+        let three = "img/cat.jpg";
+
+        function changeImage2(){
+            chimg.src = three;
+        }
+        // 조건에 따라 이미지 바꾸기!
+        function changeImage(){
+            let a = Math.floor(Math.random()*3) + 1;
+            if(a == 1){
+                chimg.src = one;
+            }else if(a == 2){
+                chimg.src = two;
+            }else{
+                chimg.src = three;
+            }
+        }
+
+        // alert로 값 출력
+        const txt = document.querySelector("#txt");
+        function getValue(){
+            alert(txt.value);
+        }
+        // 값 복사해서 대입
+        const txt2 = document.querySelector("#txt2");
+        function sameValue(){
+            txt2.value = txt.value;
+        }
+
+
+        // 가위바위보
+        const rcp = document.querySelector("#rcp");
+        const imgsrc = document.getElementsByTagName("img")[1];
+        let cizer = "img/rpc0.png"
+        let rock = "img/rpc1.png"
+        let paper = "img/rpc2.png"
+        function rcpgo(){
+            let a = Math.floor(Math.random()*3) + 1;
+            if(a == 1){
+                imgsrc.src = cizer;
+                imgsrc.onload = () => {
+                    if(rcp.value === "가위"){
+                        alert("비겼습니다!");
+                    }else if(rcp.value === "바위"){
+                        alert("이겼습니다!");
+                    }else if(rcp.value === "보"){
+                        alert("졌습니다!");
+                    }else{
+                        alert("다시 입력해주세요");
+                    }
+                };
+
+            }else if(a == 2){
+                imgsrc.src = rock;
+                imgsrc.onload = () =>{
+                    if(rcp.value === "가위"){
+                        alert("졌습니다!");
+                    }else if(rcp.value === "바위"){
+                        alert("비겼습니다!");
+                    }else if(rcp.value === "보"){
+                        alert("이겼습니다!");
+                    }else{
+                        alert("다시 입력해주세요");
+                    }
+                };
+
+            }else{
+                imgsrc.src = paper;
+                imgsrc.onload = () => {
+                    if(rcp.value === "가위"){
+                        alert("이겼습니다!");
+                    }else if(rcp.value === "바위"){
+                        alert("졌습니다!");
+                    }else if(rcp.value === "보"){
+                        alert("비겼습니다!");
+                    }else{
+                        alert("다시 입력해주세요");
+                    }
+                };
+            }
+        }
+    </script>
+</body>
+</html>

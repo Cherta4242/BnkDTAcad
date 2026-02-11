@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+/*  HEADER place
+----------------------------------------------------------*/
+header{
+    border-bottom: 1px solid gray;
+}
+.profile_header{
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.img_box img{
+    border: 1px solid black;
+    width: 200px;
+    height: auto;
+    margin-left: 80px;
+}
+.profile_explain {
+    width: 300px;
+    height: 228.75px;
+    margin-right: 35px;
+}
+
+/* MAIN place
+------------------------------------------------------------*/
+section{
+    padding-top: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+main{
+    display: flex;
+    max-width: 800px;
+    justify-content: space-between;
+}
+.tech_contact{
+    gap: 50px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 35px;
+}
+.tech_stack{
+    width: 350px;
+    height: 230px;
+    border: 1px solid black;
+}
+.contact{
+    width: 350px;
+    height: 230px;
+    border: 1px solid black;
+}
+.project_experience{
+    margin-right: 35px;
+    height: 500px;
+    width: 300px;
+    border: 1px solid black;
+}
+.plus_answer{
+    width: 800px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.one_answer{
+    width: 730px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+/* FOOTER place
+------------------------------------------------------------------*/
