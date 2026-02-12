@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calcurate</title>
+    <style>
+        /* 계산기 외관
+        ----------------------------------*/
+        #all{
+            width: 400px; 
+            height: 700px; margin: 0 auto; 
+            border: 1px solid black;
+        }
+        table{
+            margin: 0 auto;
+            margin-top: 200px;
+            border: 1px solid black;
+            width: 200px;
+        }
+        table th, td{
+            text-align: center;
+            line-height: 100%;
+            border: 1px solid rgb(121, 38, 38);
+            border-collapse: collapse;
+        }
+        table th{
+            height: 30px;
+        }
+        table td{
+            width: 40px;
+            height: 40px;
+        }
+        #calcu{
+            box-sizing: border-box;
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 계산버튼
+        --------------------------------*/
+        .enter{
+            background-color: white;
+            border: 0px;
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="all">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4">계산기</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="4"><input type="text" id="calcu"></td>
+                </tr>
+                <tr>
+                    <td id="clean">C</td>
+                    <td id="dvs">/</td>
+                    <td id="mlp">*</td>
+                    <td id="mns">-</td>
+                </tr>
+                <tr>
+                    <td id="7">7</td>
+                    <td id="8">8</td>
+                    <td id="9">9</td>
+                    <td rowspan="2" id="pls">+</td>
+                </tr>
+                <tr>
+                    <td id="4">4</td>
+                    <td id="5">5</td>
+                    <td id="6">6</td>
+                </tr>
+                <tr>
+                    <td id="1">1</td>
+                    <td id="2">2</td>
+                    <td id="3">3</td>
+                    <td rowspan="2"><button class="enter" onclick="ccl()">Enter</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="0">0</td>
+                    <td id="dot">.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+
+        const all = document.querySelector("#all");
+        const txtbox = document.querySelector("#calcu");
+        
+        // +, -, *, /가 입력될 때 지켜야할 규칙에 따라 입력되게 하는 기능. 또는 숫자입력 기능
+        all.addEventListener("click", function(cal){
+            if(cal.target.id == "dvs"){
+                if(txtbox.value === ""){
+
+                }else if(txtbox.value.slice(-1) == "+" || txtbox.value.slice(-1) == "-" || txtbox.value.slice(-1) == "*" || txtbox.value.slice(-1) == "/"){
+
+                }
+                else{
+                    txtbox.value += "/";
+                }
+            }else if(cal.target.id == "pls"){
+                if(txtbox.value === ""){
+
+                }else if(txtbox.value.slice(-1) == "+" || txtbox.value.slice(-1) == "-" || txtbox.value.slice(-1) == "*" || txtbox.value.slice(-1) == "/"){
+                    
+                }
+                else{
+                    txtbox.value += "+";
+                }
+            }else if(cal.target.id == "mns"){
+                if(txtbox.value.slice(-1) == "+" || txtbox.value.slice(-1) == "-" || txtbox.value.slice(-1) == "*" || txtbox.value.slice(-1) == "/"){
+                    
+                }else{
+                    txtbox.value += "-";
+                }
+            }else if(cal.target.id == "mlp"){
+                if(txtbox.value === ""){
+
+                }else if(txtbox.value.slice(-1) == "+" || txtbox.value.slice(-1) == "-" || txtbox.value.slice(-1) == "*" || txtbox.value.slice(-1) == "/"){
+
+                }
+                else{
+                    txtbox.value += "*";
+                }
+            }else if(cal.target.id == "dot"){
+                txtbox.value += ".";
+            }else if(cal.target.id == "clean"){
+                txtbox.value = null;
+            }
+            else{
+                txtbox.value += cal.target.id;
+            }
+        });
+
+        // 버튼 누르면 계산기 작동.
+        function ccl(){
+            if(txtbox.value == null){
+
+            }else{
+                txtbox.value = eval(txtbox.value)
+            }
+        }
+    </script>
+</body>
+</html>

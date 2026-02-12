@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            border: 1px solid black;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+        #outer{
+            background-color: antiquewhite;
+            width: 200px;
+            height: 200px;
+            
+        }
+        #middle{
+            background-color: red;
+            height: 150px;
+            width: 150px;
+            
+        }
+        #inner{
+            background-color: green;
+            height: 100px;
+            width: 100px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="outer">
+            outer
+
+            <div id="middle">
+                middle
+
+                <div id="inner">
+                    inner
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let parent = document.querySelector("#parent");
+        // let outer = document.querySelector(".outer");
+        // let middle = document.querySelector(".middle");
+        // let inner = document.querySelector(".inner");
+
+        // outer.addEventListener("click",function(evt){
+        //     console.log(evt.target.textContent)
+        //     console.log("outer...");
+        //     console.log("currentTarget " + evt.currentTarget.className);
+        //     console.log("target "+ evt.target.className);
+
+        // });
+        
+        // middle.addEventListener("click",function(evt){
+        //     console.log("middle...")
+        // });
+        // inner.addEventListener("click",function(evt){
+        //     console.log("inner...")
+        // });
+        parent.addEventListener("click", function(evt){
+            console.log(evt.target.id);
+        });
+
+    </script>
+</body>
+</html>
