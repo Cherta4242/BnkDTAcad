@@ -6,3 +6,20 @@
 index.jsp
 
 <img width="1920" height="704" alt="image" src="https://github.com/user-attachments/assets/c74ff6b7-78e5-4794-b10a-bda9a768cc0c" />
+
+
+<h3>상세 내용</h3>
+인덱스 페이지
+- 목록나오기
+- 회원가입
+- 로그인 
+회원가입(클릭) -  회원가입페이지에서 회원가입
+로그인(클릭) - 로그인페이지로 가서 로그인
+
+마이페이지
+- 회원정보 수정 가능하게
+- 회원탈퇴 신청
+
+관리자 로그인
+- 회원목록
+- 회원탈퇴 OK
