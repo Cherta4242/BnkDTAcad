@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createNode</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .item{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+    </div>
+
+    <script>
+        const wrap = document.querySelector('#wrap');
+        const div = document.createElement('div');
+        const txt = document.createTextNode('item1');
+        
+        /*const attr = document.createAttribute('class');
+        attr.value = 'item';
+        div.setAttrivuteNode(attr);*/
+        
+        // setAttribute -> 기존의 설정을 덮어쓴다.
+        // div.setAttribute('class', 'item');
+        // div.setAttribute('class', 'red');
+
+        // classList.add -> 기존의 설정에 다른 설정을 추가만 하는거
+        div.classList.add('item');
+        div.classList.add('red');
+
+        div.appendChild(txt);
+        wrap.appendChild(div);
+    </script>
+</body>
+</html>

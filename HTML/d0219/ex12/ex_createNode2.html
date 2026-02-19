@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createNode2</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .item{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+
+    </div>
+
+
+
+    <script>
+        const wrap = document.querySelector('#wrap');
+        const div = document.createElement('div');
+        const txt = document.createTextNode('item1');
+        const img = document.createElement('img');
+
+        img.setAttribute("src", "img/cat.jpg");
+        img.classList.add('item')
+        div.appendChild(img);
+        wrap.appendChild(div);
+    </script>
+</body>
+</html>

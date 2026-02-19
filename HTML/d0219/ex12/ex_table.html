@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .line{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+
+    </div>
+    <script>
+
+
+        const wrap = document.querySelector('#wrap');
+        const div = document.createElement('div');
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const headtr = document.createElement('tr');
+        const th = document.createElement('th');
+
+        const bodytr = document.createElement('tr');
+        const tbody = document.createElement('tbody');
+        const td1 = document.createElement('td');
+        const td2 = document.createElement('td');
+
+
+        
+        th.textContent="안녕하세요";
+        headtr.appendChild(th);
+        thead.appendChild(headtr);
+        table.appendChild(thead);
+        
+        
+        let count = 1;
+        let count2 = 1;
+        for (let i = 0; i < 3; i++) {
+            const tr = document.createElement('tr');
+            th.textContent = count2++ + "칸";
+            headtr.appendChild(th);
+            for (let j = 0; j < 4; j++) {
+                const td = document.createElement('td');
+                const th = document.createElement('th');
+
+                td.textContent = count++ + "칸";
+                tr.appendChild(td);
+            }
+            thead.appendChild(tr);
+            tbody.appendChild(tr);
+        }
+
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        wrap.appendChild(table);
+
+
+    </script>
+</body>
+</html>

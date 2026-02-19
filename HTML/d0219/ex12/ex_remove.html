@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box red">box1</div>
+        <div class="box green">box2</div>
+        <div class="box blue">box3</div>
+    </div>
+
+    <button onclick="f()">click!</button>
+    <script>
+        const wrap = document.querySelector("#wrap");
+        const box_red = document.querySelectorAll('.box')[0];
+        const box_green = document.querySelectorAll('.box')[1];
+        const box_blue = document.querySelectorAll('.box')[2];
+
+        //box_red.remove();
+        //box_green.removeAttribute('class');
+        console.log(box_blue.classList.contains('box'));
+
+        const btn = document.createElement('button');
+        btn.setAttribute('onclick', 'f()');
+        btn.textContent = 'click';
+        wrap.appentchild(btn);
+
+        function f(){
+            box_red.classList.toggle('red');
+        }
+    </script>
+</body>
+</html>
