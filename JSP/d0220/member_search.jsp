@@ -1,3 +1,4 @@
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -15,6 +16,22 @@
 	String url = "jdbc:oracle:thin:@//localhost:1521/orcl";
 	String user = "green";
 	String pw = "1234";
+	
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	
+	try{
+		// 드라이버 loading
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		// DB 연결
+		conn = DriverManager.getConnection(url, user, pw);
+		// SQL 작성
+		String sql = "SELECT m.*, TO_CHAR(joindate, 'YYYY-MM-DD') AS joindate_str FROM member_tbl_02 m";
+		// SQL 실행
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+	
 %>
 
 	<header>
@@ -33,34 +50,38 @@
 				<tr>
 					<td>회원번호</td>
 					<td>회원성명</td>
-					<td>전화번호</td>
+					<td style="width: 170px">전화번호</td>
 					<td class="addressing">주소</td>
-					<td>가입일자</td>
+					<td style="width: 170px">가입일자</td>
 					<td>고객등급</td>
 					<td>거주지역</td>
 				</tr>
+				<%
+					while(rs.next()){
+				%>
 				<tr>
-					<td><a href="member_modify.jsp"></a></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td><a href="member_modify.jsp"><%= rs.getInt("custno") %></a></td>
+					<td><%= rs.getString("custname") %></td>
+					<td><%= rs.getString("phone") %></td>
+					<td><%= rs.getString("address") %></td>
+					<td><%= rs.getString("joindate_str") %></td>
+					<td><%= rs.getString("grade") %></td>
+					<td><%= rs.getString("city") %></td>
 				</tr>
+				<%
+					}
+				%>
 			</table>
-			<%
-				try{
-					Connection conn = DriverManager.getConnection(url, user, pw);
-					PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM member_tbl_02");
-					pstmt.executeQuery();
-				}catch(Exception e){
-					e.printStackTrace();
-				}
-				
-			%>
 		</div>
-		
+<%
+	}catch(Exception e){
+		e.printStackTrace();
+	}finally{
+	    if(rs != null) rs.close();
+	    if(pstmt != null) pstmt.close();
+	    if(conn != null) conn.close();
+	}
+%>
 	</section>
 	<footer>
 		<div>
