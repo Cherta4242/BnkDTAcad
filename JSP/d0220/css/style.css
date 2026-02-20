@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+html, body{
+	margin: 0px;
+	height: 100%;
+}
+body{
+	background-color: #add8e6;
+	margin-bottom: 80px;
+}
+/*
+모든 JSP파일에 적용
+INDEX.JSP PAGE
+------------------------------------------------------------------------------------------------*/
+/* HEADER
+-------------------------------------*/
+header{
+	margin: 0px;
+	padding-left: 10px;
+	background-color: #4169e1;
+	color: white;
+	text-align: center;
+	line-height: 100px;
+	height: 100px;
+}
+
+/* NAV
+-------------------------------------*/
+nav{
+	margin: 0px;
+	padding-left: 30px;
+	padding-right: 30px;
+	color: white;
+	height: 40px;
+	line-height: 40px;
+	background-color: #50bcdf;
+	display: flex;
+	gap: 30px;
+}
+nav a{
+	text-decoration: none;
+	color: inherit;
+}
+
+/* SECTION
+-------------------------------------*/
+section{
+	padding-left: 10px;
+}
+section h3, section p{
+	margin: 0px;
+}
+.titling{
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+section ol{
+	margin: 0px;
+	padding-left: 17px;
+}
+
+/* FOOTER
+-------------------------------------*/
+footer{
+	position: fixed;
+	bottom: 0px;
+	line-height:50px;
+	width: 100%;
+	height: 80px;
+	margin: 0px;
+	padding: 0px;
+	color: white;
+	text-align: center;
+	background-color: #4169e1;
+}
+
+
+
+/* MEMBER_SIGNUP.JSP PAGE
+-------------------------------------------------------------------------------------------------------*/
+#member_signup_section{
+	width: 1200px;
+	margin: 0 auto;
+	padding: 0px;
+}
+
+#member_signup_section table{
+	margin: 0 auto;
+}
+#member_register table td{
+	border: 1px solid black;
+	text-align: center;
+}
+
+/* MEMBER_SEARCH.JSP PAGE
+-------------------------------------------------------------------------------------------------------*/
+#member_search_section{
+	width: 1200px;
+	margin: 0 auto;
+	padding: 0px;
+}
+#member_search_change_section table{
+	margin: 0 auto;
+}
+#member_search_change_section table td{
+	border: 1px solid black;
+	text-align: center;
+}
+.addressing{
+	width: 200px;
+}
+#member_search_section a{
+	color: white;
+	text-decoration: none;
+}
+
+/* MEMBER_MONEY.JSP PAGE
+-------------------------------------------------------------------------------------------------------*/
+#member_money_section{
+	width: 1200px;
+	margin: 0 auto;
+	padding: 0px;
+}
+#member_revenue table{
+	margin: 0 auto;
+}
+#member_revenue table td{
+	border: 1px solid black;
+	text-align: center;
+}
+
+
