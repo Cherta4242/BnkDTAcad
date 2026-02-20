@@ -7,6 +7,9 @@ DROP SEQUENCE money_seq;
 
 SELECT * FROM member_tbl_02;
 SELECT * FROM money_tbl_02;
+SELECT member_seq.CURRVAL FROM dual;
+
+commit;
 
 /* 테이블 생성
 ----------------------------------------------------------*/
@@ -60,7 +63,7 @@ CREATE SEQUENCE money_seq
     NOCACHE;
 
 /* 회원매출정보 샘플 데이터 
---------------------------------------------------
+----------------------------------------------------------*/
 INSERT INTO money_tbl_02(custno, salenol, pcost, amount, price, pcode, sdate) VALUES(100001, money_seq.NEXTVAL, 500, 5, 2500, 'A001', '2016-01-01');
 INSERT INTO money_tbl_02(custno, salenol, pcost, amount, price, pcode, sdate) VALUES(100001, money_seq.NEXTVAL, 1000, 4, 4000, 'A002', '2016-01-01');
 INSERT INTO money_tbl_02(custno, salenol, pcost, amount, price, pcode, sdate) VALUES(100001, money_seq.NEXTVAL, 500, 3, 1500, 'A008', '2016-01-01');
@@ -70,4 +73,4 @@ INSERT INTO money_tbl_02(custno, salenol, pcost, amount, price, pcode, sdate) VA
 INSERT INTO money_tbl_02(custno, salenol, pcost, amount, price, pcode, sdate) VALUES(100004, money_seq.NEXTVAL, 500, 2, 1000, 'A001', '2016-01-04');
 INSERT INTO money_tbl_02(custno, salenol, pcost, amount, price, pcode, sdate) VALUES(100004, money_seq.NEXTVAL, 300, 1, 300, 'A005', '2016-01-04');
 INSERT INTO money_tbl_02(custno, salenol, pcost, amount, price, pcode, sdate) VALUES(100004, money_seq.NEXTVAL, 600, 1, 600, 'A006', '2016-01-04');
-INSERT INTO money_tbl_02(custno, salenol, pcost, amount, price, pcode, sdate) VALUES(100004, money_seq.NEXTVAL, 3000, 1, 3000, 'A007', '2016-01-06');--------*/
+INSERT INTO money_tbl_02(custno, salenol, pcost, amount, price, pcode, sdate) VALUES(100004, money_seq.NEXTVAL, 3000, 1, 3000, 'A007', '2016-01-06');
