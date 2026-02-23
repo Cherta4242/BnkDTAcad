@@ -19,19 +19,19 @@
 </ul>
 
 <h4>.then</h4>
-<ol>
-  <li>resolve가 호출되었을 때 실행되는 함수</li>
-</ol>
+<ul>
+  <li>resulve가 호출되었을 때 실행되는 함수</li>
+</ul>
 
 <h4>.catch</h4>
-<ol>
+<ul>
   <li>reject가 호출되었을 때 실행되늰 함수</li>
-</ol>
+</ul>
 
 <h4>.finally</h4>
-<ol>
+<ul>
   <li>무조건 실행되는 함수</li>
-</ol>
+</ul>
 
 
 이 정도?
