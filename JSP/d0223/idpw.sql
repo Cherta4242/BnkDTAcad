@@ -1,0 +1,7 @@
+SELECT * FROM idpw;
+DROP TABLE idpw;
+
+CREATE TABLE idpw(
+    id VARCHAR2(20) PRIMARY KEY,
+    pw VARCHAR2(20) NOT NULL
+);
