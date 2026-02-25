@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+body{
+	margin: 0px;
+	background-color: #fef7ff;
+}
+/*	HEADER	
+------------------------------------------------*/
+header{
+	background-color: blue;
+}
+#header_view{
+	margin: 0 auto;
+	text-align: center;
+	width:1000px;
+	height: 60px;
+	color: white;
+}
+#header_view h1{
+	margin: 0px;
+	line-height: 60px;
+}
+#header_menu{
+	background-color: pink;
+}
+#header_menu_view{
+	margin: 0 auto;
+	width: 1000px;
+	height: 30px;
+}
+#header_menu_view ul{
+	display: flex;
+	justify-content: space-around;
+	line-height: 30px;
+}
+#header_menu_view ul li{
+	list-style: none;	
+}
+
+/*	SECTION(order.jsp)
+---------------------------------------------------*/
+#order_view{
+	margin: 0 auto;
+	width: 1000px;
+	text-align: center;
+}
+#order_section_view table{
+	margin: 0 auto;
+	border: 1px solid black;
+	width: 300px;
+}
+#order_view table td{
+	border: 1px solid black;
+}
+#order_section_view .input_text{
+	width: 140px;
+}
+#order_section_view table td #shopname{
+	width: 160px;
+}
+#order_section_view table td #pcode{
+	width: 160px;
+}
+
+/*	SECTION(orderview.jsp)
+---------------------------------------------------*/
+#orderview_view_section{
+	margin: 0 auto;
+	width: 1000px;
+	text-align: center;
+}
+#orderview_view table{
+	margin: 0 auto;
+	border: 1px solid black;
+	width: 990px;
+}
+#orderview_view table th{
+	border: 1px solid black;
+	
+}
+#orderview_view table td{
+	border: 1px solid black;
+}
+
+/*	SECTION(ordershop.jsp)
+---------------------------------------------------*/
+#ordershop_view_section{
+	margin: 0 auto;
+	width: 1000px;
+	text-align: center;
+}
+#ordershop_view table{
+	margin: 0 auto;
+	border: 1px solid black;
+	width: 600px;
+}
+#ordershop_view table th{
+	border: 1px solid black;
+	
+}
+#ordershop_view table td{
+	border: 1px solid black;
+}
+
+/*	SECTION(ordercode.jsp)
+---------------------------------------------------*/
+#ordercode_view_section{
+	margin: 0 auto;
+	width: 1000px;
+	text-align: center;
+}
+#ordercode_view table{
+	margin: 0 auto;
+	border: 1px solid black;
+	width: 800px;
+}
+#ordercode_view table th{
+	border: 1px solid black;
+	
+}
+#ordercode_view table td{
+	border: 1px solid black;
+}
