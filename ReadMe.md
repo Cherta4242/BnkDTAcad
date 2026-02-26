@@ -4,4 +4,5 @@
 ### 1/5 ~ 1/19 -> Java 
 ### 1/20 ~ 1/30 -> Java + SQL
 ### 2/2 ~ 2/6  -> HTML
-### 2/9 ~ 현재 -> JSP(HTML + Java)
+### 2/9 ~ 2/26 -> JSP(HTML + Java)
+### 2/27 ~ 현재 -> GitHub
