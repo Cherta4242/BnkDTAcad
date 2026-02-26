@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- jsonplaceholder에서 user정보를 10개 받아와 테이블에 출력하기. -->
+    <table border="1" style="width: 600px;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>UserName</th>
+            </tr>
+        </thead>
+        <tbody id="show_users">
+        </tbody>
+    </table>
+
+    <script>
+        // XMLHttpRequest 생성
+        const xhr = new XMLHttpRequest();
+        // Body 받아오기
+        const su = document.getElementById("show_users");
+
+        xhr.onload = function(){
+            // users의 길이를 콘솔에 출력 (10)
+            const users = JSON.parse(xhr.responseText);
+            console.log(users.length);
+            for(let i=0; i < users.length; i++){
+                // tr, td 객체 생성
+                const tr = document.createElement("tr");
+                const tdid = document.createElement("td");
+                const tdname = document.createElement("td");
+                const tdusername = document.createElement("td");
+                // tbody, tr, td에 자식으로 상속함으로써 테이블 형식을 출력하기.
+                tdid.textContent = users[i].id;
+                tdname.textContent = users[i].name;
+                tdusername.textContent = users[i].username;
+                tr.appendChild(tdid);
+                tr.appendChild(tdname);
+                tr.appendChild(tdusername);
+                su.appendChild(tr);
+            };
+        };
+        // XMLHttpRequest 세팅(GET방식, 요청할 url)
+        xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
+        // 요청 보내기
+        xhr.send();
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+
+    <script>
+
+        const users = [
+            { id: 1, name: "홍길동", phone: "010-1111-1111", email: "hong@test.com" },
+            { id: 2, name: "이순신", phone: "010-2222-2222", email: "lee@test.com" }
+        ];
+        const tbody = document.getElementById("tableBody");
+
+        users.forEach((user) => {
+            // 🔹 기본 행 생성
+            const tr = document.createElement("tr");
+
+            const tdId = document.createElement("td");
+            tdId.textContent = user.id;
+
+            const tdName = document.createElement("td");
+            tdName.textContent = user.name;
+
+            const tdBtn = document.createElement("td");
+
+            const button = document.createElement("button");
+            button.textContent = "상세보기";
+
+            tdBtn.appendChild(button);
+
+            tr.appendChild(tdId);
+            tr.appendChild(tdName);
+            tr.appendChild(tdBtn);
+
+            tbody.appendChild(tr);
+
+            // 🔥 버튼 클릭 이벤트
+            button.addEventListener("click", function () {
+
+                const nextRow = tr.nextElementSibling;
+
+                // 이미 상세행이 있으면 제거
+                if (nextRow && nextRow.classList.contains("detail-row")) {
+                    nextRow.remove();
+                    button.textContent = "상세보기";
+                    return;
+                }
+
+                // 🔹 상세행 생성
+                const detailTr = document.createElement("tr");
+                detailTr.classList.add("detail-row");
+
+                const detailTd = document.createElement("td");
+                detailTd.colSpan = 3;  // 컬럼 전체 사용
+
+                detailTd.textContent =
+                    `전화번호: ${user.phone} / 이메일: ${user.email}`;
+
+                detailTr.appendChild(detailTd);
+
+                // 현재 행 바로 아래에 삽입
+                tr.insertAdjacentElement("afterend", detailTr);
+
+                button.textContent = "취소";
+            });
+
+        });
+    </script>
+</body>
+</html>

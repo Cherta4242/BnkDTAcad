@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div id="demo"></div>
+    <table border="1">
+        <thead>
+        </thead>
+        <tbody id="tody">
+        </tbody>
+    </table>
+
+
+
+    <script>
+        const xhr = new XMLHttpRequest();
+        const demo = document.querySelector("#demo");
+        const tody = document.querySelector("#tody");
+
+        tody.addEventListener('click',(e)=>{
+            e.target.clo  
+        });
+        xhr.onload = function(){
+            if(xhr.status == 200){
+                const users = JSON.parse(xhr.responseText);
+                console.log(users.length);
+                for(let i=0; i<users.length; i++){
+                        const tbr = document.createElement("tr");
+                        const tbd1 = document.createElement("td");   
+                        const tbd2 = document.createElement("td"); 
+                        const tbd3 = document.createElement("td");
+                        const tbd4 = document.createElement("td");
+                         
+                        tbd1.textContent = users[i].id;
+                        tbd2.textContent = users[i].name;
+                        tbd3.textContent = users[i].username;
+                        tbd4.textContent = users[i].email;
+                        tbr.appendChild(tbd1);
+                        tbr.appendChild(tbd2);
+                        tbr.appendChild(tbd3);
+                        tbr.appendChild(tbd4);
+                        tody.appendChild(tbr);
+                        tbr.closest();
+                };
+            };
+            consoel.log("erorr");
+        };
+        xhr.open("GET","https://jsonplaceholder.typicode.com/users");
+        xhr.send();
+    </script>
+</body>
+</html>

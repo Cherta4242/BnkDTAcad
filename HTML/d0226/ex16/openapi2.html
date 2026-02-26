@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 공공데이터포털에서 API를 받아와 테이블에 출력하기. -->
+    <h1>공공데이터 포털의 API를 사용하여 출력</h1>
+    <h3>(경상남도 자주찾는 문화재)</h3>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>   
+                <th>번호</th>
+                <th>주소</th>
+                <th>관리자 이름</th>
+                <th>지정일</th>
+                <th>명칭</th>
+                <th>한문명칭</th>
+                <th>지역크기</th>
+                <th>시대</th>
+                <th>소유자 이름</th>
+                <th>X 좌표</th>
+                <th>Y 좌표</th>
+                <th>파일<br>URL</th>
+                <th>파일<br>URL</th>
+                <th>파일<br>URL</th>
+                <th>상세보기 <br>버튼</th>
+            </tr>
+        </thead>
+        <tbody id="show">
+        </tbody>
+    </table>
+
+    <script>
+        const tbody = document.getElementById("show");
+        var xhr = new XMLHttpRequest();
+        var url = 'http://apis.data.go.kr/6480000/gyeongnamcultural/gyeongnamculturallist';
+        var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'API키 이곳에 넣기'; /*Service Key*/
+        queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1');
+        queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10');
+        queryParams += '&' + encodeURIComponent('resultType') + '=' + encodeURIComponent('json');
+        xhr.open('GET', url + queryParams);
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                const result = JSON.parse(this.responseText);
+
+
+                console.log(result.gyeongnamculturallist.body);
+
+                for(let i = 0; i < result.gyeongnamculturallist.body.items.item.length; i++){
+                    const tr = document.createElement("tr");
+                    const td0 = document.createElement("td");
+                    const td1 = document.createElement("td");
+                    const td2 = document.createElement("td");
+                    const td4 = document.createElement("td");
+                    const td5 = document.createElement("td");
+                    const td6 = document.createElement("td");
+                    const td7 = document.createElement("td");
+                    const td8 = document.createElement("td");
+                    const td9 = document.createElement("td");
+                    const td10 = document.createElement("td");
+                    const td11 = document.createElement("td");
+                    const td12 = document.createElement("td");
+                    const td13 = document.createElement("td");
+                    const td14 = document.createElement("td");
+                    const tdbtn = document.createElement("td");
+                    const button = document.createElement("button");
+
+                    td0.textContent = i+1;
+                    td1.textContent = result.gyeongnamculturallist.body.items.item[i].ADDRESS1;
+                    td2.textContent = result.gyeongnamculturallist.body.items.item[i].ADMIN_NAME;
+                    td4.textContent = result.gyeongnamculturallist.body.items.item[i].JIJUNG_DATE;
+                    td5.textContent = result.gyeongnamculturallist.body.items.item[i].MYONGCHING;
+                    td6.textContent = result.gyeongnamculturallist.body.items.item[i].MYONGCHING_HANMUN;
+                    td7.textContent = result.gyeongnamculturallist.body.items.item[i].MYONJUK;
+                    td8.textContent = result.gyeongnamculturallist.body.items.item[i].SIDAE;
+                    td9.textContent = result.gyeongnamculturallist.body.items.item[i].SOYOUJA_NAME;
+                    td10.textContent = result.gyeongnamculturallist.body.items.item[i].UTMK_X;
+                    td11.textContent = result.gyeongnamculturallist.body.items.item[i].UTMK_Y;
+                    // td12.textContent = result.gyeongnamculturallist.body.items.item[i].fileurl1;
+                    // td13.textContent = result.gyeongnamculturallist.body.items.item[i].fileurl2;
+                    // td14.textContent = result.gyeongnamculturallist.body.items.item[i].fileurl3;
+                    button.textContent = "Content 보기";
+                    tdbtn.appendChild(button);
+
+                    tr.appendChild(td0);
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    tr.appendChild(td4);
+                    tr.appendChild(td5);
+                    tr.appendChild(td6);
+                    tr.appendChild(td7);
+                    tr.appendChild(td8);
+                    tr.appendChild(td9);
+                    tr.appendChild(td10);
+                    tr.appendChild(td11);
+                    tr.appendChild(td12);
+                    tr.appendChild(td13);
+                    tr.appendChild(td14);
+                    tr.appendChild(tdbtn);
+                    tbody.appendChild(tr);
+
+
+                    button.addEventListener("click", function(){
+                        const nextRow = tr.nextElementSibling;
+
+                        if(nextRow && nextRow.classList.contains("detail-row")){
+                            nextRow.remove();
+                            button.textContent = "Content 보기";
+                            return;
+                        };
+
+                        const detailTr = document.createElement("tr");
+                        detailTr.classList.add("detail-row");
+
+                        const detailTd = document.createElement("td");
+                        detailTd.colSpan = 2;
+                    const td3 = document.createElement("td");
+                    td3.colSpan = 13;
+
+                        detailTd.textContent = "Content";
+                    td3.textContent = result.gyeongnamculturallist.body.items.item[i].CONTENT
+                        detailTr.appendChild(detailTd);
+                        detailTr.appendChild(td3);
+
+                        tr.insertAdjacentElement("afterend", detailTr);
+                        button.textContent = "취소";
+                    });
+                };
+            };
+        };
+        xhr.send('');
+    </script>
+</body>
+</html>

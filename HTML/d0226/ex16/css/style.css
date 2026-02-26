@@ -1,0 +1,41 @@
+html {
+    overflow-y: scroll;
+}
+body{
+    background-color: #141b2d;
+    text-align: center;
+}
+h1, h3{
+    color: white;
+}
+table{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 100%;
+    table-layout: fixed;
+    font-size: 14px;
+    color: white;
+}
+/* 전체 스크롤바 영역 */
+::-webkit-scrollbar {
+    width: 10px;      /* 세로 스크롤바 두께 */
+    height: 10px;     /* 가로 스크롤바 두께 */
+}
+
+/* 스크롤바 배경 */
+::-webkit-scrollbar-track {
+    background: #141b2d;
+    border-radius: 10px;
+}
+
+/* 움직이는 막대 */
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+    border-radius: 0;
+}
+
+/* 마우스 올렸을 때 */
+::-webkit-scrollbar-thumb:hover {
+    background: white;
+}
