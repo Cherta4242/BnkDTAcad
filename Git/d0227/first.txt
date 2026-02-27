@@ -1,0 +1,1180 @@
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ pwd
+/c/Users/GGG
+
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ git
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy
+-fetch]
+           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
+           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envva
+r>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   restore    Restore working tree files
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   diff       Show changes between commits, commit and working tree, etc
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   backfill   Download missing objects in a partial clone
+   branch     List, create, or delete branches
+   commit     Record changes to the repository
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   reset      Set `HEAD` or the index to a known state
+   switch     Switch branches
+   tag        Create, list, delete or verify tags
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ git config --global user.name "cherta"
+
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ git config --global user.email "cherta4242@gmail.com"
+
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ git config user.name
+cherta
+
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ git config user.email
+cherta4242@gmail.com
+
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ cd..
+bash: cd..: command not found
+
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ pwd
+/c/Users/GGG
+
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ cd ..
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/Users
+$ pwd
+/c/Users
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/Users
+$ cd ..
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c
+$ cd dev
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev
+$ ls
+apache-tomcat-10.1.52/  hrdkorea/     jee2025/  ws_html/  ws_jsp/
+cbq_jsp/                jdk-17.0.12/  ws_git/   ws_java/
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev
+$ wpd
+bash: wpd: command not found
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev
+$ pwd
+/c/dev
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev
+$ cd ws_git
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git
+$ git init
+Initialized empty Git repository in C:/dev/ws_git/.git/
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git add a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   a.txt
+
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git rm --cached a.txt
+rm 'a.txt'
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git add a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   a.txt
+
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git commit -m "create a.txt"
+[main (root-commit) c594ebb] create a.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit c594ebb14cfff9b471d49d4a1c97cc9f238003ea (HEAD -> main)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:09:52 2026 +0900
+
+    create a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ vim b.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git add b.txt
+warning: in the working copy of 'b.txt', LF will be replaced by CRLF the next time Git touches it
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   b.txt
+
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git commit -m "create b.txt"
+[main 18da09f] create b.txt
+ 1 file changed, 2 insertions(+)
+ create mode 100644 b.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit 18da09f87318e4735d12bd7018905b324b4a6dee (HEAD -> main)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:16:39 2026 +0900
+
+    create b.txt
+
+commit c594ebb14cfff9b471d49d4a1c97cc9f238003ea
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:09:52 2026 +0900
+
+    create a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ cd ..
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev
+$ mkdir test
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev
+$ ls
+apache-tomcat-10.1.52/  hrdkorea/     jee2025/  ws_git/   ws_java/
+cbq_jsp/                jdk-17.0.12/  test/     ws_html/  ws_jsp/
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev
+$ rm -r test
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev
+$ ls
+apache-tomcat-10.1.52/  hrdkorea/     jee2025/  ws_html/  ws_jsp/
+cbq_jsp/                jdk-17.0.12/  ws_git/   ws_java/
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev
+$ cd ~
+
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ pwd
+/c/Users/GGG
+
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ c ..
+bash: c: command not found
+
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ c ..
+bash: c: command not found
+
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ cd ..
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/Users
+$ cd ..
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c
+$ cd dev
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev
+$ mkdir test
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev
+$ git init
+Initialized empty Git repository in C:/dev/.git/
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev (main)
+$ cd test
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/test
+$ git init
+Initialized empty Git repository in C:/dev/test/.git/
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/test (main)
+$ git add test.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/test (main)
+$ git commit test.txt -m " create test.txt"
+[main (root-commit) b1eed0d]  create test.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/test (main)
+$ git log
+commit b1eed0d7a5aa5208e31a1dcccc6773b88b9cfc1b (HEAD -> main)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:22:58 2026 +0900
+
+     create test.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/test (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/test (main)
+$ cd ~
+
+GGG@DESKTOP-8N3GG4O MINGW64 ~
+$ cd /c/dev/ws_git
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   a.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git restore a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   b.txt
+b.txt 수정함. 2 추가
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+warning: in the working copy of 'b.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'b.txt', LF will be replaced by CRLF the next time Git touches it
+[main af049ad] b.txt 수정함. 2 추가
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit af049adfaae8a5ba88895f35b0ebd14318bc8bd3 (HEAD -> main)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:41:33 2026 +0900
+
+    b.txt 수정함. 2 추가
+
+commit 18da09f87318e4735d12bd7018905b324b4a6dee
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:16:39 2026 +0900
+
+    create b.txt
+
+commit c594ebb14cfff9b471d49d4a1c97cc9f238003ea
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:09:52 2026 +0900
+
+    create a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   b.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git commit b.txt -m "3 추가"
+warning: in the working copy of 'b.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'b.txt', LF will be replaced by CRLF the next time Git touches it
+[main a3d30c7] 3 추가
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ 햣 ㅣㅐㅎ
+bash: 햣: command not found
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit a3d30c7fcb43643fb06e915fb4922ca82c7b4079 (HEAD -> main)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:44:01 2026 +0900
+
+    3 추가
+
+commit af049adfaae8a5ba88895f35b0ebd14318bc8bd3
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:41:33 2026 +0900
+
+    b.txt 수정함. 2 추가
+
+commit 18da09f87318e4735d12bd7018905b324b4a6dee
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:16:39 2026 +0900
+
+    create b.txt
+
+commit c594ebb14cfff9b471d49d4a1c97cc9f238003ea
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:09:52 2026 +0900
+
+    create a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git commit -am "3추가"
+On branch main
+nothing to commit, working tree clean
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   a.txt
+        modified:   b.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git add .
+warning: in the working copy of 'b.txt', LF will be replaced by CRLF the next time Git touches it
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   a.txt
+        modified:   b.txt
+
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git commit -m "a.txt에는 1이 추가, b.txt에는 4가 추가됨"
+[main 452a912] a.txt에는 1이 추가, b.txt에는 4가 추가됨
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit 452a912af23342d6a93b736ebddc6d6deb4af00d (HEAD -> main)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:50:18 2026 +0900
+
+    a.txt에는 1이 추가, b.txt에는 4가 추가됨
+
+commit a3d30c7fcb43643fb06e915fb4922ca82c7b4079
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:44:01 2026 +0900
+
+    3 추가
+
+commit af049adfaae8a5ba88895f35b0ebd14318bc8bd3
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:41:33 2026 +0900
+
+    b.txt 수정함. 2 추가
+
+commit 18da09f87318e4735d12bd7018905b324b4a6dee
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:16:39 2026 +0900
+
+    create b.txt
+
+commit c594ebb14cfff9b471d49d4a1c97cc9f238003ea
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:09:52 2026 +0900
+
+    create a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git commit -am "create rev"
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        rev.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        rev.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit 452a912af23342d6a93b736ebddc6d6deb4af00d (HEAD -> main)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:50:18 2026 +0900
+
+    a.txt에는 1이 추가, b.txt에는 4가 추가됨
+
+commit a3d30c7fcb43643fb06e915fb4922ca82c7b4079
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:44:01 2026 +0900
+
+    3 추가
+
+commit af049adfaae8a5ba88895f35b0ebd14318bc8bd3
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:41:33 2026 +0900
+
+    b.txt 수정함. 2 추가
+
+commit 18da09f87318e4735d12bd7018905b324b4a6dee
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:16:39 2026 +0900
+
+    create b.txt
+
+commit c594ebb14cfff9b471d49d4a1c97cc9f238003ea
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:09:52 2026 +0900
+
+    create a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git add rev.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git commit -m "insert rev.txt : 2"
+[main 3696711] insert rev.txt : 2
+ 1 file changed, 2 insertions(+)
+ create mode 100644 rev.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit 3696711a140638853b94f42ef929297e238f9369 (HEAD -> main)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:12:34 2026 +0900
+
+    insert rev.txt : 2
+
+commit 452a912af23342d6a93b736ebddc6d6deb4af00d
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:50:18 2026 +0900
+
+    a.txt에는 1이 추가, b.txt에는 4가 추가됨
+
+commit a3d30c7fcb43643fb06e915fb4922ca82c7b4079
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:44:01 2026 +0900
+
+    3 추가
+
+commit af049adfaae8a5ba88895f35b0ebd14318bc8bd3
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:41:33 2026 +0900
+
+    b.txt 수정함. 2 추가
+
+commit 18da09f87318e4735d12bd7018905b324b4a6dee
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:16:39 2026 +0900
+
+    create b.txt
+
+commit c594ebb14cfff9b471d49d4a1c97cc9f238003ea
+Author: cherta <cherta4242@gmail.com>
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ ^C
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git reset
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit 3696711a140638853b94f42ef929297e238f9369 (HEAD -> main)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:12:34 2026 +0900
+
+    insert rev.txt : 2
+
+commit 452a912af23342d6a93b736ebddc6d6deb4af00d
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:50:18 2026 +0900
+
+    a.txt에는 1이 추가, b.txt에는 4가 추가됨
+
+commit a3d30c7fcb43643fb06e915fb4922ca82c7b4079
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:44:01 2026 +0900
+
+    3 추가
+
+commit af049adfaae8a5ba88895f35b0ebd14318bc8bd3
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:41:33 2026 +0900
+
+    b.txt 수정함. 2 추가
+
+commit 18da09f87318e4735d12bd7018905b324b4a6dee
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:16:39 2026 +0900
+
+    create b.txt
+
+commit c594ebb14cfff9b471d49d4a1c97cc9f238003ea
+Author: cherta <cherta4242@gmail.com>
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git reset 452a912af23342d6a93b736ebddc6d6deb4af00d
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit 452a912af23342d6a93b736ebddc6d6deb4af00d (HEAD -> main)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:50:18 2026 +0900
+
+    a.txt에는 1이 추가, b.txt에는 4가 추가됨
+
+commit a3d30c7fcb43643fb06e915fb4922ca82c7b4079
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:44:01 2026 +0900
+
+    3 추가
+
+commit af049adfaae8a5ba88895f35b0ebd14318bc8bd3
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:41:33 2026 +0900
+
+    b.txt 수정함. 2 추가
+
+commit 18da09f87318e4735d12bd7018905b324b4a6dee
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:16:39 2026 +0900
+
+    create b.txt
+
+commit c594ebb14cfff9b471d49d4a1c97cc9f238003ea
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:09:52 2026 +0900
+
+    create a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        rev.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git commit -am "rev.txt Re:commit"
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        rev.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git commit -am "rev.txt Re:commit"
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        rev.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git add rev.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git commit -am "rev.txt Re:commit"
+[main 11f064f] rev.txt Re:commit
+ 1 file changed, 2 insertions(+)
+ create mode 100644 rev.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git reset --soft HEAD^
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   rev.txt
+
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git branch
+* main
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit 452a912af23342d6a93b736ebddc6d6deb4af00d (HEAD -> main)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:50:18 2026 +0900
+
+    a.txt에는 1이 추가, b.txt에는 4가 추가됨
+
+commit a3d30c7fcb43643fb06e915fb4922ca82c7b4079
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:44:01 2026 +0900
+
+    3 추가
+
+commit af049adfaae8a5ba88895f35b0ebd14318bc8bd3
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:41:33 2026 +0900
+
+    b.txt 수정함. 2 추가
+
+commit 18da09f87318e4735d12bd7018905b324b4a6dee
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:16:39 2026 +0900
+
+    create b.txt
+
+commit c594ebb14cfff9b471d49d4a1c97cc9f238003ea
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:09:52 2026 +0900
+
+    create a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git commit -m "create rev.txt"
+[main 56b0f6d] create rev.txt
+ 1 file changed, 2 insertions(+)
+ create mode 100644 rev.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit 56b0f6d71443108a4e6298bd65a71c77b2de6f22 (HEAD -> main)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:24:58 2026 +0900
+
+    create rev.txt
+
+commit 452a912af23342d6a93b736ebddc6d6deb4af00d
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:50:18 2026 +0900
+
+    a.txt에는 1이 추가, b.txt에는 4가 추가됨
+
+commit a3d30c7fcb43643fb06e915fb4922ca82c7b4079
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:44:01 2026 +0900
+
+    3 추가
+
+commit af049adfaae8a5ba88895f35b0ebd14318bc8bd3
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:41:33 2026 +0900
+
+    b.txt 수정함. 2 추가
+
+commit 18da09f87318e4735d12bd7018905b324b4a6dee
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:16:39 2026 +0900
+
+    create b.txt
+
+commit c594ebb14cfff9b471d49d4a1c97cc9f238003ea
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:09:52 2026 +0900
+
+    create a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git branch apple
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git branch
+  apple
+* main
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git branch google
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git branch
+  apple
+  google
+* main
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git add rev.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git commit -m "rev 수정"
+[main fc403d1] rev 수정
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit fc403d1b94c2772541cabc72686138d4480624c2 (HEAD -> main)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:27:43 2026 +0900
+
+    rev 수정
+
+commit 56b0f6d71443108a4e6298bd65a71c77b2de6f22 (google, apple)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:24:58 2026 +0900
+
+    create rev.txt
+
+commit 452a912af23342d6a93b736ebddc6d6deb4af00d
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:50:18 2026 +0900
+
+    a.txt에는 1이 추가, b.txt에는 4가 추가됨
+
+commit a3d30c7fcb43643fb06e915fb4922ca82c7b4079
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:44:01 2026 +0900
+
+    3 추가
+
+commit af049adfaae8a5ba88895f35b0ebd14318bc8bd3
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:41:33 2026 +0900
+
+    b.txt 수정함. 2 추가
+
+commit 18da09f87318e4735d12bd7018905b324b4a6dee
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:16:39 2026 +0900
+
+    create b.txt
+
+commit c594ebb14cfff9b471d49d4a1c97cc9f238003ea
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:09:52 2026 +0900
+
+    create a.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git switch apple
+Switched to branch 'apple'
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (apple)
+$ git status
+On branch apple
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        x.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (apple)
+$ git switch main
+Switched to branch 'main'
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        x.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git switch apple
+Switched to branch 'apple'
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (apple)
+$ git commit -am "x.txt 생성"
+On branch apple
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        x.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (apple)
+$ git add x.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (apple)
+$ git commit -m "x.txt 생성"
+[apple 34d3dcc] x.txt 생성
+ 1 file changed, 2 insertions(+)
+ create mode 100644 x.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (apple)
+$ git log
+commit 34d3dccf4f4f882ffa0b86c378d814035f718448 (HEAD -> apple)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:31:37 2026 +0900
+
+    x.txt 생성
+
+commit 56b0f6d71443108a4e6298bd65a71c77b2de6f22 (google)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:24:58 2026 +0900
+
+    create rev.txt
+
+commit 452a912af23342d6a93b736ebddc6d6deb4af00d
+Author: cherta <cherta4242@gmail.com>
+Merge branch 'apple'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Merge made by the 'ort' strategy.
+ x.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 x.txt
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit 389d8b0a66e8ad1283c1e2e9b58759803452dd1e (HEAD -> main)
+Merge: fc403d1 34d3dcc
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:36:27 2026 +0900
+
+    Merge branch 'apple'
+
+commit 34d3dccf4f4f882ffa0b86c378d814035f718448 (apple)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:31:37 2026 +0900
+
+    x.txt 생성
+
+commit fc403d1b94c2772541cabc72686138d4480624c2
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:27:43 2026 +0900
+
+    rev 수정
+
+commit 56b0f6d71443108a4e6298bd65a71c77b2de6f22 (google)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:24:58 2026 +0900
+
+    create rev.txt
+
+commit 452a912af23342d6a93b736ebddc6d6deb4af00d
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:50:18 2026 +0900
+
+    a.txt에는 1이 추가, b.txt에는 4가 추가됨
+
+commit a3d30c7fcb43643fb06e915fb4922ca82c7b4079
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:44:01 2026 +0900
+
+    3 추가
+
+commit af049adfaae8a5ba88895f35b0ebd14318bc8bd3
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:41:33 2026 +0900
+
+    b.txt 수정함. 2 추가
+
+commit 18da09f87318e4735d12bd7018905b324b4a6dee
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:16:39 2026 +0900
+
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git merge google
+Already up to date.
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit 389d8b0a66e8ad1283c1e2e9b58759803452dd1e (HEAD -> main)
+Merge: fc403d1 34d3dcc
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:36:27 2026 +0900
+
+    Merge branch 'apple'
+
+commit 34d3dccf4f4f882ffa0b86c378d814035f718448 (apple)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:31:37 2026 +0900
+
+    x.txt 생성
+
+commit fc403d1b94c2772541cabc72686138d4480624c2
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:27:43 2026 +0900
+
+    rev 수정
+
+commit 56b0f6d71443108a4e6298bd65a71c77b2de6f22 (google)
+Merge branch 'google'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Merge made by the 'ort' strategy.
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$ git log
+commit 7f78c04630d2f3d9156679b8fc49efab414b5d3c (HEAD -> main)
+Merge: 389d8b0 5530b1c
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:41:59 2026 +0900
+
+    Merge branch 'google'
+
+commit 5530b1c9e18e41923dfad653a184ea98547da9ec (google)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:41:24 2026 +0900
+
+    create x.txt
+
+commit 389d8b0a66e8ad1283c1e2e9b58759803452dd1e
+Merge: fc403d1 34d3dcc
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:36:27 2026 +0900
+
+    Merge branch 'apple'
+
+commit 34d3dccf4f4f882ffa0b86c378d814035f718448 (apple)
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:31:37 2026 +0900
+
+    x.txt 생성
+
+commit fc403d1b94c2772541cabc72686138d4480624c2
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:27:43 2026 +0900
+
+    rev 수정
+
+commit 56b0f6d71443108a4e6298bd65a71c77b2de6f22
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 17:24:58 2026 +0900
+
+    create rev.txt
+
+commit 452a912af23342d6a93b736ebddc6d6deb4af00d
+Author: cherta <cherta4242@gmail.com>
+Date:   Fri Feb 27 16:50:18 2026 +0900
+
+    a.txt에는 1이 추가, b.txt에는 4가 추가됨
+
+commit a3d30c7fcb43643fb06e915fb4922ca82c7b4079
+Author: cherta <cherta4242@gmail.com>
+
+GGG@DESKTOP-8N3GG4O MINGW64 /c/dev/ws_git (main)
+$
