@@ -21,7 +21,6 @@
   <li>주문목록조회 페이지(orders.jsp) 제작</li>
   <li>점포별주문현황 페이지(store.jsp) 제작</li>
   <li>CSS 파일 분할 및 전체 코드 점검</li>
-  <li></li>
 </ol><br><br><br>
 <hr>
 
