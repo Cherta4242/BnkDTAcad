@@ -22,7 +22,7 @@ public class BoardDAO {
 		int result = 0;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "INSERT INTO jjw_board(id, name, title, content) VALUES (jjw_board_seq.NEXTVAL, ?, ?, ?)";
+		String sql = "INSERT INTO jjw_board(id, mbid, title, content) VALUES (jjw_board_seq.NEXTVAL, ?, ?, ?)";
 		
 		try {
 			conn = conn();
@@ -43,4 +43,52 @@ public class BoardDAO {
 		
 		return result;
 	}
+	
+	public int updateBoard(BoardDTO dto) throws SQLException, ClassNotFoundException{
+		int result = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "UPDATE jjw_board SET mbid=?, title=?, content=? WHERE id=?";
+		
+		try {
+			conn = conn();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getName());
+			pstmt.setString(2, dto.getTitle());
+			pstmt.setString(3, dto.getContent());
+			pstmt.setInt(4, dto.getId());
+			result = pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+			result = 0;
+		}finally {
+			if(pstmt != null) pstmt.close();
+			if(conn != null) conn.close();
+		}
+		
+		return result;
+	}
+	
+	public int deleteBoard(BoardDTO dto) throws SQLException, ClassNotFoundException{
+		int result = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "DELETE jjw_board WHERE id=?";
+		
+		try {
+			conn = conn();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, dto.getId());
+			result = pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+			result = 0;
+		}finally {
+			if(pstmt != null) pstmt.close();
+			if(conn != null) conn.close();
+		}
+		
+		return result;
+	}
+	
 }
