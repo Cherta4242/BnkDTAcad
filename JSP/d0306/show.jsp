@@ -23,7 +23,7 @@
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	String sql = "SELECT id, title FROM jjw_board";
-	
+	int i = 1;
 	try{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		conn = DriverManager.getConnection(url, user, pw);
@@ -40,9 +40,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% while(rs.next()){ %>
+				<% while(rs.next()){%>
 				<tr onclick="location.href='view.jsp?id=<%= rs.getInt("id") %>'">
-					<td id="td_num"><%= rs.getInt("id") %></td>
+					<td id="td_num"><%= i++ %></td>
 					<td><%= rs.getString("title") %></td>
 				</tr>
 				<% } %>

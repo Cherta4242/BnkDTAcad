@@ -1,0 +1,27 @@
+@charset "UTF-8";
+#signup_section{
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 22px;
+	border: 1px solid black;
+	text-align: center;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+h3{
+	margin-top: 50px;
+}
+input{
+	width: 180px;
+	height: 25px;
+}
+#signup_btn{
+	background-color: #141b2d;
+	color: white;
+	width: 100%;
+	height:50px;
+	line-height:50px;
+	margin-top: auto;
+}

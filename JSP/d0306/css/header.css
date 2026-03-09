@@ -1,27 +1,41 @@
 @charset "UTF-8";
 header{
 	width: 1000px;
-	height: 90px;
-	line-height: 90px;
 	display: flex;
+	height: 90px;
 	justify-content: space-around;
 	margin: 0 auto;
 	border-bottom: 1px solid black;
 }
 
 #header_menu{
-	width: 200px;
+	max-width: 400px;
 	margin: 0px;
 	
 }
 header h1{
+	padding-top: 20px;
 	margin: 0px;
 }
-#header_menu ul{
+#header_lgsg{
+	margin: 0;
+	padding: 0px;
+	padding-top: 15px;
+	display: flex;
+	justify-content: end;
+	gap: 5px;
+	height: 30px;
+}
+#header_lgsg li{
+	font-size: 14px;
+}
+#header_menu_three{
 	margin: 0;
 	padding: 0px;
 	display: flex;
 	justify-content: space-between;
+	height: 40px;
+	gap: 10px;
 }
 #header_menu ul li{
 	list-style: none;

@@ -16,6 +16,7 @@ body h2{
 #index_title{
 	width: 100%;
 	text-align: center;
+	margin-top: 100px;
 }
 #index_content_title{
 	text-align: center;
@@ -83,6 +84,27 @@ body h2{
 	height: 600px;
 	padding: 15px;
 }
+#view_section a{
+	text-decoration: none;
+	color: inherite;
+}
+#view_update{
+	background-color: #646464;
+	color: white;
+	width: 380px;
+	text-align: center;
+}
+#view_delete{
+	background-color: #141b2d;
+	color: white;
+	width: 380px;
+	text-align: center;
+}
+#view_update_delete{
+	margin-top: 3px;
+	display: flex;
+	justify-content: space-between;
+}
 
 /*	WRITE
 -------------------------------------------------------------------------------------------*/
@@ -135,49 +157,50 @@ body h2{
 	line-height: 30px;
 }
 
+
 /*	UPDATE
 -------------------------------------------------------------------------------------------*/
-#write_section{
+#update_section{
 	width: 800px;
 	margin: 0 auto;
 	margin-top: 22px;
 }
-#write_title_name{
+#update_title_name{
 	display: flex;
 	justify-content: space-between;
 }
-#write_title{
+#update_title{
 	width:70%;
 	height: 50px;
 	line-height: 50px;
 	border:1px solid black;
 	text-align: center;
 }
-#write_name{
+#update_name{
 	width: 30%;
 	height: 50px;
 	line-height: 50px;
 	border: 1px solid black;
 	text-align: center;
 }
-#write_content{
+#update_content{
 	border: 1px solid black;
 	height: 600px;
 	padding: 15px;
 }
-#input_title{
+#input_title_update{
 	width: 60%;
 	height: 70%;
 }
-#input_name{
+#input_name_update{
 	width: 60%;
 	height: 70%;
 }
-#input_content{
+#input_content_update{
 	width: 99%;
 	height: 99%;
 }
-#write_button_div{
+#input_button_update{
 	margin-top: 5px;
 	text-align: center;
 	background-color: #141b2d;

@@ -23,6 +23,7 @@
 				<li>화면헤더: header.jsp</li>
 				<li>메인화면: index.jsp</li>
 				<li>목록화면: show.jsp</li>
+				<li>귀찮으니까 그만 적을게요</li>
 			</ol>
 		</div>
 	</section>

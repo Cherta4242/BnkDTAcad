@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>상세보기 페이지</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,7 +24,10 @@
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
-	String sql = "SELECT * FROM jjw_board WHERE id=?";
+	String sql = "SELECT jb.id, jm.name AS mbid, jb.title AS title, jb.content AS content "
+				+ "FROM jjw_board jb "
+				+ "JOIN jjw_member jm ON jb.mbid = jm.mbid "
+				+ "WHERE jb.id = ?";
 	
 	try{
 		Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -41,14 +44,41 @@
 				제목: <b><%= rs.getString("title") %></b>
 			</div>
 			<div id="view_name">
-				작성자: <b><%= rs.getString("name") %></b>
+				작성자: <b><%= rs.getString("mbid") %></b>
 			</div>
 		</div>
 		<div id="view_content">
 			<%= rs.getString("content") %>
 		</div>
-		<div id="view_update"><a href="update.jsp">수정하기</a></div>
+		<div id="view_update_delete">
+		<% if(rs.getString("mbid").equals(loginName)){%>
+			<a href="update.jsp?id=<%= id %>" id="view_update">수정하기</a>
+			<div id="view_delete" onclick="deleting()">삭제하기</div>	
+		<%} else{}%>
+		</div>
 	</section>
+
+	<%@ include file="footer.jsp" %>
+	
+<script>
+	function deleting(){
+	    const obj = {
+	        id: <%= id %>
+	    };
+	    console.log(obj.id);
+		const xhr = new XMLHttpRequest();
+		xhr.onload = function(){
+	        alert(xhr.responseText);
+	        location.href = "show.jsp";
+		};
+	    
+	    xhr.open("POST", "DeleteServlet");
+	    xhr.setRequestHeader("Content-Type", "application/json");
+	    xhr.send(JSON.stringify(obj));
+	}
+
+</script>
+
 <%
 	}catch(Exception e){
 		e.printStackTrace();
@@ -57,9 +87,6 @@
 		if(pstmt != null) pstmt.close();
 		if(conn != null) conn.close();
 	}
-
-
 %>
-	<%@ include file="footer.jsp" %>
 </body>
 </html>

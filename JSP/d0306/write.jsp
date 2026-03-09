@@ -16,7 +16,7 @@
 				<input type="text" id="input_title" placeholder="제목을 작성해주세요.">
 			</div>
 			<div id="write_name">
-				<input type="text" id="input_name" placeholder="작성자 이름">
+				<div id="input_name"><%= loginName %></div>
 			</div>
 		</div>
 		<div id="write_content">
@@ -31,14 +31,14 @@
 
 <script>
 	const title = document.getElementById("input_title");
-	const name = document.getElementById("input_name");
 	const content = document.getElementById("input_content");
 	function writeBoard(){
 	    const obj = {
 	        title: title.value,
-	        name: name.value,
+	        name: '<%= loginId %>',
 	        content: content.value
 	    };
+	    console.log(obj.value)
 		const xhr = new XMLHttpRequest();
 		xhr.onload = function(){
             alert(xhr.responseText);
