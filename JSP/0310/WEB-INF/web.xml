@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+	<display-name>ex05</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.xhtml</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.xhtml</welcome-file>
+	</welcome-file-list>
+  
+	<!-- 에러코드 중 403이 발생했을 때 설정 -->
+	<error-page>
+		<error-code>403</error-code>
+		<location>/errors/403.jsp</location>
+	</error-page>
+	
+	<!-- 세션 타임아웃 설정 --> 
+	<session-config>
+		<session-timeout>1</session-timeout>
+	</session-config>
+	
+<!-- 
+	<filter>
+		<filter-name>p1filter</filter-name>
+		<filter-class>filters.P1Filter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>p1filer</filter-name>
+		<url-pattern>/p1</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>p2filter</filter-name>
+		<filter-class>filters.P2Filter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>p2filer</filter-name>
+		<url-pattern>/p2</url-pattern>
+	</filter-mapping>
+ -->
+ 
+ 
+</web-app>
