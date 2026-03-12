@@ -1,0 +1,34 @@
+@charset "UTF-8";
+body{margin: 0px;}
+header{
+	background-color: #141b2d;
+	margin: 0 auto;
+	text-align: center;
+	height: 80px;
+}
+header h1{
+	margin: 0px;
+	color: white;
+}
+header a{
+	text-decoration: none;
+	color: inherit;
+}
+#header_menu{
+	height: 20px;
+	border-top: 1px solid white;
+	border-bottom: 1px solid black;
+	color: white;
+}
+#header_menu ul{
+	margin: 0 auto;
+	max-width: 800px;
+	text-align: center;
+	display: flex;
+	padding: 0px;
+	gap: 20px;
+	justify-content: center;
+}
+#header_menu li{
+	list-style: none;
+}
