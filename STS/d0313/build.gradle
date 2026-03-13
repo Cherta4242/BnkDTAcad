@@ -1,0 +1,85 @@
+plugins {
+	id 'java'
+	id 'war'
+	id 'org.springframework.boot' version '4.0.3'
+	id 'io.spring.dependency-management' version '1.1.7'
+    id 'eclipse'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+description = 'Demo project for Spring Boot'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api' 
+	// JSP에서 JSTL 태그(<c:forEach>, <c:if> 등)를 사용하기 위한 API
+	
+	implementation 'jakarta.servlet:jakarta.servlet-api'  
+	// Servlet API (HttpServletRequest, HttpServletResponse 등 웹 요청/응답 처리 인터페이스)
+	
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	// JSP 파일을 컴파일하고 실행하기 위한 JSP 엔진 (Tomcat Jasper)
+	
+	runtimeOnly("org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1")
+	// JSTL 실제 구현체 (JSP에서 JSTL이 실제로 동작하도록 하는 라이브러리)
+	
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	// Spring JDBC 사용 (JdbcTemplate, DataSource 자동 설정)
+	
+	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+	// Spring MVC 기능 제공 (Controller, DispatcherServlet, ViewResolver 등 웹 MVC 구조)
+	
+	compileOnly 'org.projectlombok:lombok'
+	// Lombok 어노테이션 사용 (Getter, Setter, Constructor 자동 생성) - 컴파일 시에만 필요
+	
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+	// Oracle DB JDBC 드라이버 (애플리케이션이 Oracle DB와 연결할 때 사용)
+	
+	annotationProcessor 'org.projectlombok:lombok'
+	// Lombok 어노테이션을 실제 코드로 변환해주는 Annotation Processor
+	
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat-runtime'
+	// 외부 Tomcat 서버에서 실행할 때 필요한 Tomcat 런타임 (WAR 배포용)
+	
+	testImplementation 'org.springframework.boot:spring-boot-starter-jdbc-test'
+	// JDBC 관련 테스트 지원 (DB 테스트, Test utilities)
+	
+	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+	// Spring MVC 테스트 지원 (MockMvc, Controller 테스트)
+	
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	// JUnit 테스트 실행을 위한 런타임 런처
+	
+	// c:forEach가 노란줄로 끄이길래 추가함
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+
+    implementation 'javax.servlet:jstl:1.2'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+eclipse {
+    wtp {
+        facet {
+            facet name: 'jst.web', version: '6.0'
+        }
+    }
+}

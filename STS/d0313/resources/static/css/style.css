@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+/* index
+---------------------------------*/
+#index_section{
+	width: 100%;
+	text-align: center;
+}
+section{
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+#show_section table{
+	width: 600px;
+	margin: 0 auto;
+	text-align: center;
+}
+.view_page{
+	width: 700px;
+	margin: 30px auto;
+	border: 1px solid #000;
+}
+
+.title_name{
+	display: flex;
+	border-bottom: 1px solid #000;
+}
+
+.title{
+	width: 70%;
+	padding: 10px;
+	border-right: 1px solid #000;
+	font-weight: bold;
+}
+
+.name{
+	width: 30%;
+	padding: 10px;
+	text-align: center;
+}
+
+.content{
+	padding: 20px;
+	min-height: 400px;
+	line-height: 1.6;
+	white-space: pre-line;
+}
