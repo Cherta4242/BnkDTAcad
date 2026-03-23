@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Show Member page([[${length}]])</h1>
+	<hr>
+	<table border="1" style="width: 700px; text-align:center; margin: 0 auto; margin-top: 200px;">
+		<tr>
+			<th>number</th>
+			<th>mno</th>
+			<th>id</th>
+			<th>pw</th>
+			<th>name</th>
+			<th>업데이트</th>
+		</tr>
+		<tr th:each="member, stat : ${members}">
+			<td th:text="${stat.index}"></td>
+			<td th:text="${member.mno}"></td>
+			<td>
+				<a	th:text="${member.id}"
+					th:href="@{/member(id=${member.id})}">
+				</a>
+			</td>
+			<td th:text="${member.pw}"></td>
+			<td th:text="${member.name}"></td>
+			<td>
+				<a	th:text="업데이트"
+					th:href="@{/updateForm(id=${member.id})}">
+				</a>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

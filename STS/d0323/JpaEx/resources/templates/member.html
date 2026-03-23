@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http:///www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Member Page</h1>
+	<hr>
+	<p th:text="${member.mno}"></p><br>
+	<p th:text="${member.id}"></p><br>
+	<p th:text="${member.pw}"></p><br>
+	<p th:text="${member.name}"></p><br>
+	<a th:text="삭제하기" th:href="@{/delete(mno=${member.mno})}"></a><br>
+</body>
+</html>
