@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게시판 상세보기</title>
+<style>
+	body{
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<h1>게시판 상세보기</h1>
+	<hr>
+	
+	<table border="1" style="margin: 0 auto; width: 700px;">
+		<tr>
+			<td th:text="${jpaEnt.bno}"></td>
+			<td th:text="${jpaEnt.writer}"></td>
+			<td th:text="${jpaEnt.title}"></td>
+			<td th:text="${jpaEnt.content}"></td>
+		</tr>
+	</table>
+	<a th:text="삭제하기" th:href="@{/delete(bno=${jpaEnt.bno})}></a>
+</body>
+</html>

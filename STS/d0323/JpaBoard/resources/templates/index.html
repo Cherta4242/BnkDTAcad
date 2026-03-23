@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게시판 목록</title>
+<style>
+	body{
+		text-align: center;
+	}
+
+</style>
+</head>
+<body>
+	<h1>게시판 만들기</h1>
+	<hr>
+	<h3>게시판 목록</h3>
+	<table border="1" style="margin: 0 auto; width: 700px;">
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>작성자</th>
+		</tr>
+		<tr th:each="board, stat : ${boardList}">			
+			<td><a th:text="${stat.count}" th:href="@{/detail(bno=${board.bno})}"></a></td>
+			<td><a th:text="${board.title}" th:href="@{/detail(bno=${board.bno})}"></a></td>
+			<td><a th:text="${board.writer}" th:href="@{/detail(bno=${board.bno})}"></a></td>
+		</tr>
+	</table>
+	<br><br><br>
+	<p><a th:href="@{/writeForm}">게시글 작성</a></p>
+</body>
+</html>
