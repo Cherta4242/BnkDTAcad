@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>회원가입 페이지</title>
+<link rel="stylesheet" th:href="@{css/header.css}">
+<link rel="stylesheet" th:href="@{css/register.css}">
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+	
+	<section id="register_section">
+		<form th:action="@{/regist}" method="POST">
+			<input type="text" placeholder="Insert Into Your ID here!" name="id">
+			<input type="password" placeholder="Insert Into Your PassWord here!" name="password">
+			<input type="text" placeholder="Insert Into Your NickName here!" name="nickname">
+			<input type="submit" value="회원가입하기" class="regBtn">
+		</form>
+	</section>
+	
+</body>
+</html>

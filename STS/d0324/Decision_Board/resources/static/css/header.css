@@ -1,0 +1,31 @@
+@charset "UTF-8";
+header{
+	background-color: #141b2d;
+	width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-around;
+	color: white;
+	
+	border-bottom: 1px solid grey;
+}
+
+header ul{
+	display: flex;
+	justify-content: end;
+	gap: 20px;
+}
+
+header .mb_menu{
+	font-size: 13px;
+	color: grey;
+}
+
+header li{
+	list-style: none;
+}
+
+header a{
+	text-decoration: none;
+	color: inherit;
+}

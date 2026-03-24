@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>메인 페이지</title>
+</head>
+<body>
+	
+<header th:fragment="header">
+	<div>
+		<h2><a th:href="@{/}">Decision Log</a></h2>		
+	</div>
+	<div>
+		<ul class="mb_menu" th:if="${session.userId == null}">
+			<li><a href="loginForm">로그인</a></li>
+			<li><a href="regForm">회원가입</a></li>
+		</ul>
+		<ul class="mb_menu" th:unless="${session.userId == null}">
+			<li><b th:text="${session.userId} + '님 환영합니다.'"></b></li>
+			<li><b>로그아웃</b></li>
+		</ul>
+		<ul>
+			<li>메뉴 1</li>
+			<li>메뉴 2</li>
+			<li>메뉴 3</li>
+		</ul>
+	</div>
+</header>
+
+
+</body>
+</html>
+
+
