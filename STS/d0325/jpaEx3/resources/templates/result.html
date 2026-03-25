@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>결과창</title>
+</head>
+<body>
+	<h1>결과 페이지!</h1>
+	<hr>
+	<table border="1">
+		<tr>
+			<th>번호</th>
+			<th>아이디</th>
+			<th>이름</th>
+			<th>이메일</th>
+			<th>나이</th>
+			<th>active?</th>
+			<th>날짜</th>
+		</tr>
+		<tr th:each="ent, stat : ${ent}">
+			<td th:text="${stat.count}">
+			<td th:text="${ent.id}">
+			<td th:text="${ent.name}">
+			<td th:text="${ent.email}">
+			<td th:text="${ent.age}">
+			<td th:text="${ent.active}">
+			<td th:text="${#temporals.format(ent.regDate, 'yyyy년 MM월 dd일')}">
+		<tr>
+		
+	</table>
+	
+	
+	<a href="/testPage">TestPage로 다시 ㄱㄱ</a>
+</body>
+</html>
