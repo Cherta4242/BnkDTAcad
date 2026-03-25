@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Memo Regist Page</h1>
+	<hr>
+	<form action="/memoRegist" method="POST">
+		<input type="text" name="message" placeholder="Input message..."><br>
+		<input type="text" name="writer" th:value="${session.username}"><br>
+		<input type="submit" value="Regist">
+	</form>
+	
+</body>
+</html>
