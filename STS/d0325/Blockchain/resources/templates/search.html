@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>아이디로 내 정보 조회</title>
+</head>
+<body>
+	<form th:action="@{/search}" method="POST">
+		<input type="text" name="id">	
+		<input type="submit" value="search!">
+	</form>
+	
+	<div th:text="${"></div>
+	
+</body>
+</html>
