@@ -32,14 +32,22 @@ public class LoginController {
 		System.out.println(id + password);
 		MemberEntity member = memberRepository.findByIdAndPassword(id, password);
 		if(member != null) {
+			session.setAttribute("userMno", member.getMno());
 			session.setAttribute("userId", member.getId());
 			session.setAttribute("userPassword", member.getPassword());
-			session.setAttribute("userNickname", member.getNickname());			
+			session.setAttribute("userNickname", member.getNickname());
+			session.setAttribute("userRegdate", member.getRegdate());
 		}else {
 			return "redirect:/loginForm";
 		}
 		
 		
+		return "redirect:/";
+	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
 		return "redirect:/";
 	}
 	

@@ -1,0 +1,65 @@
+@charset "UTF-8";
+body{
+	background-color: #141b2d;
+	color: white;
+}
+
+#boardDetail_section{
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 50px;
+	
+}
+
+#boardDetail_section #title_nickname{
+	display: flex;
+	text-align: center;
+	height: 10%;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	align-items: center;
+}
+
+#boardDetail_section #title_nickname #btitle{
+	width: 70%;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: left;
+	padding-left: 20px;
+}
+#boardDetail_section #title_nickname #nickname{
+	width: 30%;
+	font-size: 14px;
+	color: #aaa;
+}
+
+#bcontent {
+	padding: 20px;
+	font-size: 15px;
+	line-height: 1.6;
+	
+	white-space: pre-wrap; /* 줄바꿈 유지 ⭐ */
+	
+	height: 500px;
+	overflow-y: auto; /* 내용 길면 스크롤 */
+}
+
+#boardDetail_section_all{
+  width: 470px;
+  height: 630px;
+  margin: 0 auto;
+  border: 1px solid rgba(255,255,255,0.2);
+  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  
+  display: flex;
+  flex-direction: column;
+}
+
+#bcontent::-webkit-scrollbar {
+  width: 6px;
+}
+
+#bcontent::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}

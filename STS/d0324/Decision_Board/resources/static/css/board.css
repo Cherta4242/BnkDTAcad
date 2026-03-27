@@ -1,0 +1,59 @@
+@charset "UTF-8";
+body{
+	background-color: #141b2d;
+	color: white;
+}
+
+#baord_section a{
+	text-decoration: none;
+	color: inherit;
+}
+
+#board_section{
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+
+#board_section table{
+	width: 700px;
+	margin: 0 auto;
+	text-align: center;
+	border-collapse: collapse;
+	border-spacing: 0 20px;
+}
+
+#board_section table td{
+	border-bottom: 1px solid grey;
+	padding: 10px;
+}
+
+#board_section table .td1{
+	width: 10%;
+}
+#board_section table .td2{
+	width: 65%;
+}
+#board_section table .td3{
+	width: 35%;
+}
+#board_section table tr:hover{
+	background-color: grey;
+}
+
+#board_section #board_write_section{
+	text-align: center;
+}
+
+#board_section #board_write_section a{
+	display: inline-block;
+	width: 700px;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+	border:1px solid grey;
+	margin-top: 30px;
+	color: inherit;
+	font-weight: bold;
+	text-decoration: none;
+}

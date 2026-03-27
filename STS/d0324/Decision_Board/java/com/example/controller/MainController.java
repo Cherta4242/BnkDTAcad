@@ -12,6 +12,25 @@ public class MainController {
 	public String root() {
 		return "index";
 	}
+
+	// board 작성 페이지로 이동
+	@GetMapping("/goboardWrite")
+	public String goBoardWrite() {
+		return "boardP/boardWrite";
+	}
 	
+	@GetMapping("/goOtherDec")
+	public String goOtherDecision() {
+		return "OtherDec";
+	}
 	
+	@GetMapping("/gomyDecision")
+	public String goMyDecision() {
+		return "myDecision";
+	}
+	
+	@GetMapping("/gomyPage")
+	public String goMyPage() {
+		return "myPage";
+	}
 }

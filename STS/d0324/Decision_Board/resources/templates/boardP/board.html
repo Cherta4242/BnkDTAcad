@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>자유 게시판</title>
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/board.css">
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+	
+	<section id="board_section">
+		<table>
+			<tr th:each="boardList, stat: ${boardList}" th:onclick="|location.href='@{/boardP/goboardDetail/{id}(id=${boardList.bno})}'|">
+				<td class="td1" th:text="${stat.count}"></td>
+				<td class="td2" th:text="${boardList.btitle}"></td>
+				<td class="td3" th:text="${boardList.member.nickname}"></td>
+			</tr>
+		</table>
+		
+		<div id="board_write_section">
+			<a th:if="${session.userId} != null" th:href="@{/goboardWrite}">게시글 작성</a>
+		</div>
+	</section>
+</body>
+</html>

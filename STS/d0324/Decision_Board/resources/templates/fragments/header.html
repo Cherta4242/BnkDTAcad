@@ -12,17 +12,20 @@
 	</div>
 	<div>
 		<ul class="mb_menu" th:if="${session.userId == null}">
-			<li><a href="loginForm">로그인</a></li>
-			<li><a href="regForm">회원가입</a></li>
+			<li><a href="/loginForm">로그인</a></li>
+			<li><a href="/regForm">회원가입</a></li>
 		</ul>
 		<ul class="mb_menu" th:unless="${session.userId == null}">
-			<li><b th:text="${session.userId} + '님 환영합니다.'"></b></li>
-			<li><b>로그아웃</b></li>
+			<li><a th:href="@{/gomyPage}" th:text="|${session.userNickname} 님|"></a></li>
+			<li><a href="/logout">로그아웃</a></li>
 		</ul>
 		<ul>
-			<li>메뉴 1</li>
-			<li>메뉴 2</li>
-			<li>메뉴 3</li>
+			<li><a th:href="@{/goBoard}">게시판</a></li>
+			<li>/</li>
+			<li><a href="/goOtherDec">기록 둘러보기</a></li>
+			<li th:if="${session.userId != null}">/</li>
+			<li th:if="${session.userId != null}"><a href="/gomyDecision">나의 기록</a></li>
+			
 		</ul>
 	</div>
 </header>

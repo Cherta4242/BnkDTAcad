@@ -21,8 +21,21 @@ public class RegistController {
 	
 	@PostMapping("/regist")
 	public String regist(MemberEntity member) {
-		mbRps.save(member);
-		return "redirect:/loginForm";
+		
+		
+//		System.out.println("------------------------------");
+//		System.out.println(member.getId());
+//		List<MemberEntity> list = mbRps.findAll();
+//		System.out.println(list);
+//		System.out.println("------------------------------");
+		
+		
+		if(mbRps.findById(member.getId()) == null) {
+			mbRps.save(member);
+			return "redirect:/loginForm";			
+		}
+		
+		return "redirect:/regForm";
 	}
 	
 }

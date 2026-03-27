@@ -1,0 +1,51 @@
+@charset "UTF-8";
+body{
+	background-color: #141b2d;
+	color: white;
+}
+
+#board_write_section{
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+#board_write_section form{
+	width: 700px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#board_write_section form #write_title{
+	width: 450px;
+	height: 40px;
+	padding: 10px;
+	background-color: #141b2d;
+	color: inherit;
+	border: 1px solid white;
+}
+
+#board_write_section form #write_content{
+	width: 450px;
+	height: 550px;
+	padding: 10px;
+	background-color: #141b2d;
+	color: inherit;
+	border: 1px solid white;
+	white-space: pre-wrap;
+}
+
+#board_write_section form #write_btn{
+	width: 470px;
+	height: 40px;
+	padding: 10px;
+	background-color: #141b2d;
+	color: inherit;
+	border: 1px solid white;
+}
+
+#board_write_section form #write_btn:hover{
+	background-color: grey;
+	
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게시글 작성 페이지</title>
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/boardWrite.css">
+</head>
+<body>
+	<div th:replace="~{fragments/header :: header}"></div>
+	
+	<section id="board_write_section">
+		<form th:action="@{/boardWrite}" method="POST">
+			<input type="text" name="btitle" placeholder="제목을 입력해주세요" id="write_title"><br>
+			<textarea name="bcontent" placeholder="내용을 입력해주세요" id="write_content"></textarea><br>
+			<input type="submit" value="등록" id="write_btn"><br>
+		</form>
+	</section>
+	
+</body>
+</html>

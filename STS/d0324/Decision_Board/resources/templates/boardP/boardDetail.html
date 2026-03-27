@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>게시글 상세</title>
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/boardDetail.css">
+</head>
+<body>
+	<div th:replace="~{fragments/header :: header}"></div>
+	
+	<section id="boardDetail_section">
+		<div id="boardDetail_section_all">
+			<div id="title_nickname">
+				<div th:text="${btitle}" id="btitle"></div>
+				<div th:text="${nickname}" id="nickname"></div>			
+			</div>
+			<div th:text="${bcontent}" id="bcontent"></div>			
+		</div>
+	
+		<a th:if="${usermodelId} == ${session.userId}" th:href="@{/goboardModify}">수정하기</a>
+		<a th:if="${usermodelId} == ${session.userId}" th:href="@{/boarddelete}">삭제하기</a>
+	
+	</section>
+	
+</body>
+</html>
