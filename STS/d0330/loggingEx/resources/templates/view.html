@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>메인화면 접속 횟수</th>
+			<th>메뉴화면 접속 횟수</th>
+			<th>아메를 고른 횟수</th>
+			<th>라떼를 고른 횟수</th>
+			<th>모카를 고른 횟수</th>
+			<th>허브를 고른 횟	수</th>
+		</tr>
+		<tr>
+			<td th:text="${mainview}">
+			<td th:text="${selectview}">
+			<td th:text="${iceAme}">
+			<td th:text="${cafeRt}">
+			<td th:text="${moca}">
+			<td th:text="${hubmint}">
+		</tr>
+	</table>
+</body>
+</html>

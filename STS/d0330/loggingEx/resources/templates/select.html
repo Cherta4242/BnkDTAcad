@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form th:action="@{/selected}" method="POST">
+		<input type="text" name="menu" value="iceAme" readonly>
+		<input type="submit" value="선택">
+	</form>
+	
+	<form th:action="@{/selected}" method="POST">
+		<input type="text" name="menu"  value="cafeRt" readonly>
+		<input type="submit" value="선택">
+	</form>	
+	
+	<form th:action="@{/selected}" method="POST">
+		<input type="text" name="menu"  value="moca" readonly>
+		<input type="submit" value="선택">
+	</form>
+	
+	<form th:action="@{/selected}" method="POST">
+		<input type="text" name="menu"  value="hubmint" readonly>
+		<input type="submit" value="선택">
+	</form>	
+	
+</body>
+</html>
