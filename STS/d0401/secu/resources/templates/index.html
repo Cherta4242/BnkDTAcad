@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index Page</title>
+</head>
+<body>
+	<h1>Index Page</h1>
+	<hr>
+	<div sec:authorize="isAuthenticated()">
+		<form th:action="@{/logout}" method="POST">
+			<button type="submit">로그아웃</button>
+		</form>
+	</div>
+	<div sec:authorize="isAnonymous()">
+		<a href="/regist">회원가입</a><br>
+		<a href="/login">로그인</a>	
+	</div>
+	<a href="/member">멤페</a><br>
+	<a href="/admin">관페</a><br>
+	
+</body>
+</html>

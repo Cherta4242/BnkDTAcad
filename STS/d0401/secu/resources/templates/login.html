@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Login Form</h1>
+	<hr>
+	<div>
+		<p th:text="${errorMsg}"></p>
+		<p th:text="${logoutMsg}"></p>
+	</div>
+	<form th:action="@{loginProc}" method="POST">
+		<input type="text" name="username" placeholder="Input your username.........."/><br>
+		<input type="password" name="password" placeholder="Input your password.........."/><br>
+		<input type="submit" value="로그인하기"/>
+		
+		<input type="checkbox" name="remember-me">기억해줘~~
+	</form>
+	
+</body>
+</html>
