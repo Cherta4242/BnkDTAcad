@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>AJAX TEst</title>
+</head>
+<body>
+	
+	<input type="text" id="name" placeholder="input your name//////////"><br>
+	<input type="text" id="email" placeholder="input your email.............."><br>
+	<input type="text" id="org" placeholder="input your org.............."><br>
+	<button onclick="sendData()">전송</button><br>
+
+
+
+	<h3>결과:</h3>
+	<div id="result"></div>
+	<div id="result2"></div>
+	<div id="result3"></div>
+
+	<script>
+		function sendData() {
+		
+			const name = document.getElementById("name").value;
+			const email = document.getElementById("email").value;
+			const org = document.getElementById("org").value;
+			
+			// 패치 주소 써주면서
+			fetch("http://localhost:8080/api/v1/post-api/member2", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify({		// 항상 문자열을 JSON파일화로 바꾸는 것을 잊지 맙시다.
+					name: name,
+					email: email,
+					organization: org
+				})
+			})
+			.then(response => response.json())	// json응답데이터 받아 주고
+			.then(data => {		// 콘솔에도 출력해주고
+				console.log(data);
+			
+				// 받은 데이터 화면에 출력
+				document.getElementById("result").innerHTML = "이름: " + data.name + "<br>" + "이메일: " + data.email + "<br>" + "회사: " + data.organization;
+			})
+			
+			console.log("오 잘했는데요?");
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+package com.example.controller;
+
+import java.util.Map;
+
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.dto.Member;
+
+//http://localhost:8080/api/v1/put-api/member
+@RestController
+@RequestMapping("/api/v1/put-api")
+public class PutController {
+	
+	@PutMapping("/member")
+	public String putMember(@RequestBody Map<String, Object> putData) {
+		StringBuilder sb = new StringBuilder();
+		
+		putData.entrySet().forEach(map -> {
+			sb.append(map.getKey() + ": " + map.getValue() + "\n");
+		});
+		
+		return sb.toString();
+	}
+	
+	@PutMapping("/member2")
+	public Member putMember2(@RequestBody Member dto) {
+		return dto;
+	}
+	
+}
